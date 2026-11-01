@@ -1,0 +1,25 @@
+# Private references, in any format
+/assets/*
+!/assets/README.md
+# Personal history and generated workflows
+/references/history.jsonl
+/pending/
+/output/
+/outputs/
+*.zip
+# Python and editor caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+
+# Additional local workflow folders
+**/*pending*/
+/wardrobe-runtime/
+/runtime/
+*.log
