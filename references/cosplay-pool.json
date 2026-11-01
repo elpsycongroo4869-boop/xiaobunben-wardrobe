@@ -1,0 +1,343 @@
+{
+  "version": "2.4",
+  "description": "24位可辨识、按成年版本演绎的经典虚构角色；角色名称及道具源于原作；不同角色仅做风格融合时仍以真实职业为主体。",
+  "characters": [
+    {
+      "id": "harley-quinn",
+      "name": "小丑女 Harley Quinn",
+      "source": "DC",
+      "visual_cues": [
+        "红蓝撞色双马尾",
+        "俏皮拼接夹克",
+        "棒球棍"
+      ],
+      "suggested_scene": "哥谭夜晚霓虹街区",
+      "suggested_action": "一边调整棒球棍一边回头大笑",
+      "fusion_style": "红蓝拼接与玩味朋克气质",
+      "adult_only": true
+    },
+    {
+      "id": "ada-wong",
+      "name": "艾达·王 Ada Wong",
+      "source": "生化危机 Resident Evil",
+      "visual_cues": [
+        "优雅红色裙装或特工战衣",
+        "短发/黑色发型",
+        "轻便通讯装置"
+      ],
+      "suggested_scene": "雨后现代城市的秘密接头地点",
+      "suggested_action": "查看掌中通讯器并警惕观察目标",
+      "fusion_style": "红黑冷艳特工风格、非对称剪裁",
+      "adult_only": true
+    },
+    {
+      "id": "wonder-woman",
+      "name": "神奇女侠 Wonder Woman",
+      "source": "DC",
+      "visual_cues": [
+        "红金战甲",
+        "蓝色甲裙",
+        "真言套索与护腕"
+      ],
+      "suggested_scene": "古典神庙外的暮色广场",
+      "suggested_action": "抬起护腕准备阻挡来袭攻击",
+      "fusion_style": "红金护甲与英勇女性战士廓形",
+      "adult_only": true
+    },
+    {
+      "id": "spider-woman",
+      "name": "蜘蛛女侠 Jessica Drew",
+      "source": "Marvel",
+      "visual_cues": [
+        "红黄蜘蛛纹路贴身战衣",
+        "胸前蛛形符号",
+        "面罩"
+      ],
+      "suggested_scene": "玻璃大厦之间的城市天台",
+      "suggested_action": "张开双臂准备跃向另一栋建筑",
+      "fusion_style": "蜘蛛纹理分割线、红色战衣图形",
+      "adult_only": true
+    },
+    {
+      "id": "black-widow",
+      "name": "黑寡妇 Black Widow",
+      "source": "Marvel",
+      "visual_cues": [
+        "黑色战术服",
+        "金属护腕",
+        "简洁红色短发"
+      ],
+      "suggested_scene": "现代城市地下设施入口",
+      "suggested_action": "贴近墙边检查装备并确认走廊状况",
+      "fusion_style": "贴身黑色战术线条与红黑冷峻感",
+      "adult_only": true
+    },
+    {
+      "id": "catwoman",
+      "name": "猫女 Catwoman",
+      "source": "DC",
+      "visual_cues": [
+        "黑色猫耳头套",
+        "窄型护目镜",
+        "光泽深色战衣"
+      ],
+      "suggested_scene": "都市博物馆屋顶",
+      "suggested_action": "单手扶栏观察下方巡逻灯光",
+      "fusion_style": "低调深色皮革纹理与猫科曲线美",
+      "adult_only": true
+    },
+    {
+      "id": "scarlet-witch",
+      "name": "绯红女巫 Scarlet Witch",
+      "source": "Marvel",
+      "visual_cues": [
+        "绯红头冠",
+        "红黑层叠服装",
+        "掌间猩红光点"
+      ],
+      "suggested_scene": "风暴将至的古老街道",
+      "suggested_action": "双手凝聚红色能量保护身后路人",
+      "fusion_style": "绯红色系、头冠与神秘法术纹理",
+      "adult_only": true
+    },
+    {
+      "id": "lara-croft",
+      "name": "劳拉·克劳馥 Lara Croft",
+      "source": "古墓丽影 Tomb Raider",
+      "visual_cues": [
+        "探险背心",
+        "实用腰带",
+        "双腿攀爬护具"
+      ],
+      "suggested_scene": "热带遗迹的断桥入口",
+      "suggested_action": "踩稳碎石并展开古地图定位入口",
+      "fusion_style": "探险背心、皮革工具腰带和行动感",
+      "adult_only": true
+    },
+    {
+      "id": "poison-ivy",
+      "name": "毒藤女 Poison Ivy",
+      "source": "DC",
+      "visual_cues": [
+        "植物藤蔓装饰",
+        "深绿与叶纹服饰",
+        "红色长发"
+      ],
+      "suggested_scene": "城市温室破碎玻璃穹顶",
+      "suggested_action": "抚摸枝叶观察植物迅速生长",
+      "fusion_style": "植物绿纹理与优雅藤蔓曲线",
+      "adult_only": true
+    },
+    {
+      "id": "batgirl",
+      "name": "蝙蝠女 Batgirl（成年版）",
+      "source": "DC",
+      "visual_cues": [
+        "深紫或黑色披风",
+        "蝙蝠胸章",
+        "实用腰带"
+      ],
+      "suggested_scene": "城市高楼屋顶的清晨",
+      "suggested_action": "整理抓钩装置准备下楼追踪",
+      "fusion_style": "蝙蝠徽标、披风与精干动作设计",
+      "adult_only": true
+    },
+    {
+      "id": "yennefer",
+      "name": "叶奈法 Yennefer",
+      "source": "巫师 The Witcher",
+      "visual_cues": [
+        "黑白魔法师装束",
+        "黑卷发",
+        "黑曜石项链"
+      ],
+      "suggested_scene": "城堡长廊与传送门",
+      "suggested_action": "举起手施展传送法术",
+      "fusion_style": "黑白层叠剪裁与神秘华丽感",
+      "adult_only": true
+    },
+    {
+      "id": "triss",
+      "name": "特莉丝 Triss Merigold",
+      "source": "巫师 The Witcher",
+      "visual_cues": [
+        "红棕发",
+        "绿蓝布料与皮革层次",
+        "法术饰物"
+      ],
+      "suggested_scene": "中世纪药草庭院",
+      "suggested_action": "查看魔法药草并开启炼金盒",
+      "fusion_style": "深绿皮革腰线与温暖法术纹理",
+      "adult_only": true
+    },
+    {
+      "id": "2b",
+      "name": "2B",
+      "source": "尼尔：机械纪元 NieR:Automata",
+      "visual_cues": [
+        "黑色哥特战斗裙",
+        "眼罩",
+        "白色短发",
+        "机械长剑"
+      ],
+      "suggested_scene": "荒芜未来城市的花树下",
+      "suggested_action": "收剑静立观察空中无人机",
+      "fusion_style": "黑色哥特战斗裙与几何镂空层次",
+      "adult_only": true
+    },
+    {
+      "id": "tifa",
+      "name": "蒂法·洛克哈特 Tifa Lockhart",
+      "source": "最终幻想 VII",
+      "visual_cues": [
+        "黑色裙装与白色背心",
+        "红色格斗护具",
+        "长黑发"
+      ],
+      "suggested_scene": "工业都市酒吧门前",
+      "suggested_action": "缠紧护手并准备参与格斗训练",
+      "fusion_style": "运动格斗层次、黑白红配色",
+      "adult_only": true
+    },
+    {
+      "id": "bayonetta",
+      "name": "贝优妮塔 Bayonetta",
+      "source": "猎天使魔女",
+      "visual_cues": [
+        "黑色贴身魔法战衣",
+        "眼镜",
+        "夸张高挑发型"
+      ],
+      "suggested_scene": "巴洛克教堂广场",
+      "suggested_action": "抬手召出华丽魔法纹章",
+      "fusion_style": "高级时装式黑色廓形与金属细节",
+      "adult_only": true
+    },
+    {
+      "id": "chun-li",
+      "name": "春丽 Chun-Li",
+      "source": "街头霸王 Street Fighter",
+      "visual_cues": [
+        "蓝色旗袍格斗服",
+        "发髻与白色发带",
+        "腕带"
+      ],
+      "suggested_scene": "中国街区武馆院落",
+      "suggested_action": "正准备经典格斗架势",
+      "fusion_style": "蓝白改良旗袍与强健运动姿态",
+      "adult_only": true
+    },
+    {
+      "id": "cammy",
+      "name": "嘉米 Cammy White",
+      "source": "街头霸王 Street Fighter",
+      "visual_cues": [
+        "绿色战斗服",
+        "红色贝雷帽",
+        "双麻花辫"
+      ],
+      "suggested_scene": "军事训练设施",
+      "suggested_action": "检查腕部护具后进入训练场",
+      "fusion_style": "绿色战斗装与简练军装元素",
+      "adult_only": true
+    },
+    {
+      "id": "mercy",
+      "name": "天使 Mercy",
+      "source": "守望先锋 Overwatch",
+      "visual_cues": [
+        "白金救援装甲",
+        "医疗杖",
+        "机械羽翼"
+      ],
+      "suggested_scene": "科技救援中心外侧",
+      "suggested_action": "打开医疗杖为队员提供支援",
+      "fusion_style": "白金羽翼与医疗科技线条",
+      "adult_only": true
+    },
+    {
+      "id": "widowmaker",
+      "name": "黑百合 Widowmaker",
+      "source": "守望先锋 Overwatch",
+      "visual_cues": [
+        "紫色战斗装",
+        "红色高性能护目镜",
+        "长发"
+      ],
+      "suggested_scene": "未来城市高层狙击平台",
+      "suggested_action": "收起观测仪查看远方目标",
+      "fusion_style": "紫色战衣与高科技侦察元素",
+      "adult_only": true
+    },
+    {
+      "id": "jinx",
+      "name": "金克丝 Jinx（成年演绎）",
+      "source": "英雄联盟 League of Legends",
+      "visual_cues": [
+        "蓝色长辫",
+        "工业朋克拼接装",
+        "涂鸦装备"
+      ],
+      "suggested_scene": "蒸汽朋克城市工厂天桥",
+      "suggested_action": "检查彩绘机械装置并坏笑",
+      "fusion_style": "蓝紫朋克、金属配件与俏皮混搭",
+      "adult_only": true
+    },
+    {
+      "id": "vi",
+      "name": "蔚 Vi",
+      "source": "英雄联盟 League of Legends",
+      "visual_cues": [
+        "短粉发",
+        "拳套机械臂",
+        "皮革工装"
+      ],
+      "suggested_scene": "蒸汽朋克城市拳击馆",
+      "suggested_action": "系紧巨大机械拳套进行热身",
+      "fusion_style": "街头格斗工装与皮革层次",
+      "adult_only": true
+    },
+    {
+      "id": "yor-forger",
+      "name": "约尔·福杰 Yor Forger",
+      "source": "间谍过家家 SPY x FAMILY",
+      "visual_cues": [
+        "黑红礼服",
+        "金色发饰",
+        "尖锐型武器"
+      ],
+      "suggested_scene": "古典晚宴花园的夜间长廊",
+      "suggested_action": "整理手套后巡视晚宴入口",
+      "fusion_style": "优雅黑红礼裙和金饰线条",
+      "adult_only": true
+    },
+    {
+      "id": "nico-robin",
+      "name": "妮可·罗宾 Nico Robin",
+      "source": "海贼王 One Piece",
+      "visual_cues": [
+        "成熟海盗冒险装",
+        "深色长发",
+        "经典宽檐帽"
+      ],
+      "suggested_scene": "港口遗迹边的冒险船",
+      "suggested_action": "翻阅航海铭文并眺望古迹",
+      "fusion_style": "考古旅行风与成熟层叠服装",
+      "adult_only": true
+    },
+    {
+      "id": "raiden-shogun",
+      "name": "雷电将军 Raiden Shogun",
+      "source": "原神 Genshin Impact",
+      "visual_cues": [
+        "紫色和服战斗装",
+        "花纹长袖",
+        "华丽发饰"
+      ],
+      "suggested_scene": "稻妻神社石阶的晚霞",
+      "suggested_action": "按住刀鞘俯视神社参道",
+      "fusion_style": "紫金和风战斗层次与雷纹",
+      "adult_only": true
+    }
+  ]
+}
