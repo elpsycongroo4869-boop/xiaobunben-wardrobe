@@ -8,8 +8,9 @@ import argparse
 import json
 import sys
 from pathlib import Path
+from face_sensual_trial import is_text_face_delivery
 
-SUPPORTED_DRAWS = {'2.2', '2.3', '2.4', '2.5', '3.0', '3.1', '3.2', '3.3', '3.4', '3.5'}  # v2.3.1 沿用 v2.3 抽签数据结构
+SUPPORTED_DRAWS = {'2.2', '2.3', '2.4', '2.5', '3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.5.2', '3.5.2-charm30-test', '3.5.2-charm30-expression-test','3.5.2-charm30-emotion-tone-test','3.5.2-charm70-natural-props-emotion-test','3.5.2-charm70-framing-sovereignty-test','3.5.2-charm100-framing-sovereignty-test','3.5.2-charm100-framing-compact30-test','3.5.2-charm100-sensual-framing-compact30-test','3.5.2-charm100-candid-realism-framing-compact30-test', '3.5.2-charm-index-candid-realism-framing-compact30-test', '3.5.2-charm85-role-exposure50-handphysics-compact30-test', '3.5.2-B3.2-role-first-costume-test'}  # v2.3.1 沿用 v2.3 抽签数据结构
 
 
 def compatible_shot(draw):
@@ -118,6 +119,9 @@ def compile_shot(draw, action=None, cue1=None, cue2=None, role_override=None, ho
     style=(f'{cam["name"]}；{cam["medium"]}，{cam["texture"]}，'
            f'{cam["lighting"]}，{cam["palette"]}，{cam["optics"]}，{cam["framing"]}。')
     person='同一位明确成年的东亚女性「小笨笨」，参照 assets/xiaobunben-selected-reference-2026-11-01.jpg 的面部气质：小巧柔和鹅蛋脸、柔和略尖下巴、清亮杏眼、秀气鼻梁、自然柔润粉唇；约20岁成年女性的青春活力和甜美灵气。健康偏瘦、肩膀秀气、腰线自然、四肢纤细修长、不过度瘦削的真实成年女性比例，不刻意夸大胸臀；服装发型随实际职业变化'
+    if is_text_face_delivery(draw):
+        person=('同一位明确成年的女性「小笨笨」，脸部仅采用本签文字设定：'+draw['face_profile_zh']+
+                '健康纤细的成年体态，自然真实的身体比例；服装、发型与表情随本次故事变化。')
     costume_mode=draw.get('costume_mode','refined')
     if costume_mode not in COSTUME_GUIDES:
         raise ValueError('未知服装演绎模式')

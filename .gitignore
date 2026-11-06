@@ -23,3 +23,6 @@ Thumbs.db
 /wardrobe-runtime/
 /runtime/
 *.log
+
+# Private full-prompt session records
+/references/*完整用户提示词*.txt

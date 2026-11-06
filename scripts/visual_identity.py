@@ -47,3 +47,16 @@ SCENE_HIERARCHY = (
  'She is the nearest, largest and sharpest recognizable person; soft facial fill and natural eye catchlights '
  'flatter her in the chosen lighting. Other people stay small, distant and visually quiet.'
 )
+
+
+# v3.5.2 delivery-only compact phrasing; the original FACE_EN/BODY_EN
+# stay unchanged for verifying historical sealed pending deliveries.
+FACE_EN_COMPACT = (
+    'Clearly adult East Asian woman (~20), petite fine-boned narrow oval face, '
+    'slim cheeks, short tapered lower face, small softly pointed chin; '
+    'clear dark almond eyes with subtly lifted corners, fine brows, '
+    'petite straight nose and soft rose-pink lips. Natural adult proportions.'
+)
+BODY_EN_COMPACT = (
+    'Healthy slim adult figure: narrow shoulders, defined waist, slender arms and long fine legs.'
+)

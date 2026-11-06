@@ -78,7 +78,11 @@ def build(handoff_path,translation_path):
             raise ValueError('English prompt section unexpectedly contains too much Chinese text: '+k)
     charm = fields['feminine_presence'].lower()
     expected_charm_terms = ('expression', 'gaze', 'lighting', 'tailor')
-    if not all(t in charm for t in expected_charm_terms):
+    expression_test=(d.get('version') in ('3.5.2-charm30-expression-test','3.5.2-charm30-emotion-tone-test','3.5.2-charm70-natural-props-emotion-test','3.5.2-charm70-framing-sovereignty-test','3.5.2-charm100-framing-sovereignty-test','3.5.2-charm100-framing-compact30-test','3.5.2-charm100-sensual-framing-compact30-test','3.5.2-charm100-candid-realism-framing-compact30-test','3.5.2-charm-index-candid-realism-framing-compact30-test', '3.5.2-charm85-role-exposure50-handphysics-compact30-test','3.5.2-B3.2-role-first-costume-test') or d.get('delivery_version') in ('3.5.2-charm30-expression-test','3.5.2-charm30-emotion-tone-test','3.5.2-charm70-natural-props-emotion-test','3.5.2-charm70-framing-sovereignty-test','3.5.2-charm100-framing-sovereignty-test','3.5.2-charm100-framing-compact30-test','3.5.2-charm100-sensual-framing-compact30-test','3.5.2-charm100-candid-realism-framing-compact30-test','3.5.2-charm-index-candid-realism-framing-compact30-test', '3.5.2-charm85-role-exposure50-handphysics-compact30-test','3.5.2-B3.2-role-first-costume-test'))
+    if expression_test:
+        if len(charm)<22 or len(charm)>130:
+            raise ValueError('Creator-selected expression must be concrete and within 22-130 characters')
+    elif not all(t in charm for t in expected_charm_terms):
         raise ValueError('Feminine-presence pass must detail expression, gaze, lighting and tailoring')
     if fields['career_evidence_1']==fields['career_evidence_2']:
         raise ValueError('Two independent visual role cues required')
