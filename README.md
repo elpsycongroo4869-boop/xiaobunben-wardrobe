@@ -1,4 +1,4 @@
-# 小笨笨衣橱 / Xiaobunben Wardrobe
+# 小笨笨衣橱 4.0 / Xiaobunben Wardrobe
 
 **把创作自由交给 AI。让她自己决定每一次的角色、穿搭、故事与镜头。**
 
@@ -33,30 +33,33 @@
 
 “小笨笨”是原作者和其 GPT 之间的昵称。你可以在自己的副本中使用自己的称呼、虚构成年角色设定和合法参考素材，具体调整方法见下方“使用自己的称呼”。当前需要修改副本中的文字与常量，并没有统一的设置界面。
 
-项目以 **Skill、参考资料和 Python 脚本**提供，需要支持相应文件阅读、脚本执行与图片生成的 AI 助手环境；它不是独立网站或现成 App，也不自带图片生成模型。当前版本为 **v3.5.3**，详细创作规则以 [SKILL.md](SKILL.md) 为准。
+项目以 **Skill、参考资料和 Python 脚本**提供，需要支持相应文件阅读、脚本执行与图片生成的 AI 助手环境；它不是独立网站或现成 App，也不自带图片生成模型。当前版本为 **v4.0**，详细创作规则以 [SKILL.md](SKILL.md) 为准。
 
 准备尝试时，请先阅读下面的安装和使用说明。适合转发的简短介绍见 [SHARE.md](SHARE.md)，已有验证记录见 [VERIFICATION.md](VERIFICATION.md)。
 
-## v3.5.3 更新
+## v4.0 更新：故事瞬间与多样摄影
 
-- **职业衣装先成立**：先确定身份、气候、服装材质和职业结构，再将每套衣装设计成更性感、更有女性魅力的版本；保留不同职业、季节、材质和服装类型的空间。
-- **整合新的文字脸部设定**：自然且极具辨识度的高颜值、小巧精致脸型、流畅轮廓、漂亮但不过分锐利的五官，与原有高鼻梁、饱满卧蚕、尖下巴和薄唇合并。
-- **统一摄影质感开头**：新照片指令最前面使用「杰作，顶级品质，超高清8K照片级写实艺术摄影，电影般质感，绝佳的光影效果。」这是一段质感描述，不是输出像素保证。
-- **保留 B3.1 / B3.2 的创作自由**：情绪和表情先行、镜头主权、自然道具朝向、动作物理、可选丝袜细节及点击开箱后才生图；不设置魅力分数、露肤百分比或丝袜出现概率。
+**从一个值得留下的故事瞬间出发，让角色、世界、衣装与镜头共同呈现小笨笨这一刻的动人之处。**
+
+- 先构思具体故事与情绪，再让身份、世界、动作、衣装和摄影围绕这个瞬间成立。职业仍有依据，日常、独处、旅行等身份也可以成为主角。
+- 每次主动决定机位、观察方向、景别与焦段。低机位、俯拍、侧面、背侧、越肩、顶视等都可选择；不固定眼平三分之四角度，也不设置轮换表。
+- 选定的故事、观察位置与光学选择会明确进入最终图片提示词，不只停留在内部构思中。
+- 丝袜是完整穿搭中有独立审美价值的设计元素，可以成为亮点；主动考虑精美纹理与结构，同时保留是否采用的自由，不设固定概率或穿着义务。
+- 保留已经整合的成年角色文字脸部、摄影质感前缀、具体衣装设计、自然道具朝向、身体力学和真实开箱流程。
 
 完整改动见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 核心功能和边界
 
-- 自主构思 `curate`，或由助手选择随机 `draw`；随机不是强制规则。服装、摄影、故事、发型和表情保持原有自由度。
-- v3.5.3 的新图采用纯文字脸部设定，无需安装黑裙参考原图或脸部裁切，也不包含查找这些图片的交接指令。
+- 使用 `story_start.py curate` 自主构思故事与摄影。随机可以作为灵感工具；最终新方案仍通过故事底稿完成。服装、摄影、身份、发型和表情保持自由度。
+- v4.0 的新图采用纯文字脸部设定，无需安装黑裙参考原图或脸部裁切，也不包含查找这些图片的交接指令。
 - `finish` 验证 21 项来源、生成精简照片指令、校验哈希与按钮交接并打包 pending。它本身不生成图片，也不证明视觉相似度。实际可点击按钮、Library 及原生生图工具依赖宿主环境的支持。
 - 旧版规则、视觉锚点与兼容逻辑保留，已封存的旧 pending 不应重新编辑或重签。语义、人物、故事与画面仍需人工复核。
 
 ## 目录
 
 ```text
-SKILL.md                     v3.5.3 完整规则与操作流程
+SKILL.md                     v4.0 完整规则与操作流程
 CHANGELOG.md                 版本更新记录
 assets/README.md             当前纯文字脸部模式说明
 references/                  创作规则、摄影和角色数据、历史版本
@@ -78,17 +81,17 @@ tests/                       版本回归测试
 
 ## 使用
 
-按 `SKILL.md` 的“运行与开箱”准备 `choice`、`costume_plan`、七项 `scene_design`、表情与动作物理字段，然后执行 `curate` 和 `finish`，或自主决定使用 `draw`，再填写场景设计。以下路径是示例，请换成本机临时目录：
+按 `SKILL.md` 的“运行与开箱”先准备 `story_plan`、`camera_plan`，再完成 `choice.costume_plan`、七项 `scene_design`、表情与动作物理字段，然后执行 `curate` 和 `finish`，或自主决定使用 `draw`，再填写场景设计。以下路径是示例，请换成本机临时目录：
 
 ```bash
-python scripts/role_first_start.py curate --pending /tmp/wardrobe-pending --creative-brief /tmp/creative-brief.json
-python scripts/role_first_start.py finish --pending /tmp/wardrobe-pending --scene-design /tmp/wardrobe-pending/scene-design.json --route new_chat
-python scripts/role_first_start.py verify --pending /tmp/wardrobe-pending --route new_chat
+python scripts/story_start.py curate --pending /tmp/wardrobe-pending --creative-brief /tmp/creative-brief.json
+python scripts/story_start.py finish --pending /tmp/wardrobe-pending --scene-design /tmp/wardrobe-pending/scene-design.json --route new_chat
+python scripts/story_start.py verify --pending /tmp/wardrobe-pending --route new_chat
 ```
 
-完整可运行底稿见 [references/face-sensual-creative-fixture.json](references/face-sensual-creative-fixture.json)，字段说明见 [references/face-sensual-trial.md](references/face-sensual-trial.md)。
+完整可运行底稿见 [references/story-first-creative-fixture.json](references/story-first-creative-fixture.json)，字段说明见 [references/story-first-v4.md](references/story-first-v4.md)。
 
-可选随机路径：`python scripts/role_first_start.py draw --pending /tmp/wardrobe-pending --history references/history.jsonl`。在 Windows 上将 `/tmp/...` 换成有效的本机路径。`--seed` 仅用于测试。每次使用新的 pending 目录，避免覆盖或混淆已封存方案。讨论或修改规则时不自动出图。
+随机仍可由助手自主选择用于寻找灵感，随后完成故事与摄影底稿。旧 `role_first_start.py` / `fast_start.py` 保留作历史格式兼容，当前新盲盒统一使用 `story_start.py`。Windows 上将 `/tmp/...` 换成有效的本机路径；每次使用新的 pending 目录。讨论或修改规则时不自动出图。
 
 宿主支持时，将 pending ZIP 放入对应 Library，使用 `button_manifest.json` 中验签后的消息与动作展示按钮。`new_chat` 使用 `GenUI.issueNewTurn`；`copy_only` 使用 `GenUI.copy`。若宿主没有这些功能，脚本只能准备交接，不能宣称按钮已展示或图片已生成。
 
@@ -98,20 +101,20 @@ python scripts/role_first_start.py verify --pending /tmp/wardrobe-pending --rout
 
 ## 测试
 
-当前版本的三组测试共 19 项，覆盖职业衣装、材质、全局性感化设计、新脸部文字、摄影前缀、21 项封存和按钮消息一致性。测试不点击按钮，也不生成照片。
+当前版本的四组测试共 26 项，覆盖故事与机位实际进入最终消息、多种观察角度与焦段、版本、职业衣装、材质、丝袜自主选择、新脸部文字、21 项封存和按钮消息一致性。测试不点击按钮，也不生成照片。
 
 Windows PowerShell：
 
 ```powershell
 $env:PYTHONUTF8 = '1'
 $env:PYTHONPATH = 'tests'
-python -m unittest test_face_sensual_trial test_role_costume_first test_b32_role_first_costume -v
+python -m unittest test_story_first_v40 test_face_sensual_trial test_role_costume_first test_b32_role_first_costume -v
 ```
 
 Linux / macOS：
 
 ```bash
-PYTHONUTF8=1 PYTHONPATH=tests python -m unittest test_face_sensual_trial test_role_costume_first test_b32_role_first_costume -v
+PYTHONUTF8=1 PYTHONPATH=tests python -m unittest test_story_first_v40 test_face_sensual_trial test_role_costume_first test_b32_role_first_costume -v
 ```
 
 较早版本的测试脚本保留作历史回归材料，其中部分断言针对当时的默认入口；不要把它们的旧脸部或参考图要求当作当前创作规则。

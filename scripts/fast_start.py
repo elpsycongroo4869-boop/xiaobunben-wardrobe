@@ -25,6 +25,7 @@ from exposure_physics import VERSION as EXPOSURE_PHYSICS_VERSION, DEFAULT_EXPOSU
 from role_costume import REVISION as ROLE_COSTUME_REVISION, MAX_WARDROBE_CHARS, is_role_first, attach_plan, validate_plan, validate_texture
 from role_first_costume import VERSION as B32_VERSION, validate_costume_plan
 from face_sensual_trial import REVISION as FACE_SENSUAL_REVISION, is_trial, mark_trial, validate_trial, metadata as trial_metadata
+from story_first import VERSION as STORY_VERSION, REVISION as STORY_REVISION, is_story_first, prepare_brief, mark_story, validate_draw as validate_story_draw, hosiery_selected, metadata as story_metadata
 
 ROOT = Path(__file__).resolve().parents[1]
 CAMERA_EN = json.loads((ROOT/'references/camera-packs-en.json').read_text(encoding='utf-8'))
@@ -106,11 +107,15 @@ def stage_draw(pending, history, lane=None, seed=None, charm_index=DEFAULT_INDEX
  write_json(pending/'draw.json',d)
  return d
 
-def stage_curate(pending, creative_brief_path, *, role_costume_first=False, face_sensual_trial=False):
+def stage_curate(pending, creative_brief_path, *, role_costume_first=False, face_sensual_trial=False, story_first=False):
  """V3: assistant makes a creative decision; lottery is optional, not default."""
  pending=Path(pending).resolve()
  pending.mkdir(parents=True,exist_ok=False)
  brief=json.loads(Path(creative_brief_path).read_text(encoding='utf-8'))
+ if story_first:
+  if not role_costume_first or not face_sensual_trial:
+   raise ValueError('4.0 preserves current adult face and character clothing safeguards')
+  brief=prepare_brief(brief)
  choice=brief.get('choice')
  design=brief.get('scene_design')
  if not isinstance(choice,dict) or not isinstance(design,dict):
@@ -178,6 +183,8 @@ def stage_curate(pending, creative_brief_path, *, role_costume_first=False, face
   if not role_costume_first:
    raise ValueError('Face/sensual trial requires the role-costume-first workflow')
   mark_trial(draw)
+ if story_first:
+  mark_story(draw, brief)
  validate_design(design,draw)
  if lane in ('career','fusion','story') and not (choice['role'].lower() in design['subject'].lower() or all(x in design['subject'].lower() for x in choice['role'].lower().split() if len(x)>3)):
   # Semantic mapping from Chinese role names to English must be manually reviewed.
@@ -203,6 +210,8 @@ def validate_design(design, draw):
   validate_texture(design['wardrobe'], draw['camera_pack']['texture'])
  if is_trial(draw):
   validate_trial(draw, design['wardrobe'])
+ if is_story_first(draw):
+  validate_story_draw(draw)
  if draw.get('is_original') and (not design.get('role') or len(design['role'])<5):
   raise ValueError('An original occupation must be named explicitly in scene design')
  # B3: mood is an upstream creative decision, not a randomized expression label.
@@ -232,10 +241,15 @@ def build_fields(d,s,design):
             ' with instantly recognizable signature appearance and professionally believable activity.' if char and d['lane']=='cosplay'
             else ('A clearly adult East Asian fictional heroine with a coherent personal identity and expressive role-specific presence.' if d.get('mode')=='chosen' else 'A clearly adult East Asian female professional, with a composed and lively presence in her occupational world.'))
  body='Healthy, slender adult proportions and natural movement suited to the profession.'
+ if is_story_first(d):
+  character='One clearly adult fictional heroine living this specific story moment, with a coherent identity and natural presence.'
+  body='Healthy, slender adult proportions and natural movement suited to this action.'
  detail=(f"She is seen {moment}; the chosen story moment is expressed in her action and environment." if d.get('mode')=='chosen' else f"She is seen {moment}; the work unfolds during an authentic, specific local event, with her action visibly underway.")
  light_extra=design.get('lighting_detail','')
  if light_extra and (len(light_extra)<20 or len(light_extra)>160):raise ValueError('lighting_detail is out of bounds')
  shot=f'{pose} Keep her visible story action and two independent role clues readable.' if d.get('mode')=='chosen' else f'{pose} Keep her actual task and its two independent occupational cues readable.'
+ if is_story_first(d):
+  shot=f'{pose} Keep the chosen story action and its two independent visible clues readable.'
  field={
   'world_and_role': design['subject'],
   'environment': design['setting'],
@@ -274,6 +288,8 @@ def stage_finish(pending, design_path, route='new_chat'):
   attach_plan(d, existing or supplied, design.get('wardrobe'))
   if is_trial(d):
    d['art_direction_revision']=FACE_SENSUAL_REVISION
+  if is_story_first(d):
+   d['art_direction_revision']=STORY_REVISION
  if d.get('version') in (FRAMING_VERSION,CHARM100_FRAMING_VERSION,COMPACT100_VERSION,SENSUAL100_VERSION,REAL100_VERSION,CHARM_INDEX_VERSION,EXPOSURE_PHYSICS_VERSION,B32_VERSION) or d.get('delivery_version') in (FRAMING_VERSION,CHARM100_FRAMING_VERSION,COMPACT100_VERSION,SENSUAL100_VERSION,REAL100_VERSION,CHARM_INDEX_VERSION,EXPOSURE_PHYSICS_VERSION,B32_VERSION):
   if d.get('mode')=='random' and not d.get('frame_extent'):
    d['frame_extent']=design.get('frame_extent')
@@ -296,10 +312,12 @@ def stage_finish(pending, design_path, route='new_chat'):
  # Respect already-specified coordinated legwear; no inserted camera request.
  hosiery_requested=any(token in design['wardrobe'].lower() for token in
      ('black tights','black stockings','black thigh-high stockings','dark sheer tights','sheer black hosiery'))
+ if is_story_first(d):
+  hosiery_requested=hosiery_selected(design['wardrobe'])
  natural_lower_frame=any(token in d['suggested_camera'] for token in
      ('全身','远景','步行','街拍','舞台','三分之四'))
  s=compile_shot(d,design['action'],design['cue1'],design['cue2'],
-     role_override=design.get('role'),hosiery_fitting=hosiery_requested and natural_lower_frame)
+     role_override=design.get('role'),hosiery_fitting=hosiery_requested and natural_lower_frame and not is_story_first(d))
  write_json(pending/'scene-design.json',design)
  write_json(pending/'shoot.json',s)
  h=seal(pending/'draw.json',pending/'shoot.json','context_inferred')
@@ -334,12 +352,15 @@ def stage_finish(pending, design_path, route='new_chat'):
     **({'anatomy_neutral_mode':True} if d.get('anatomy_neutral_mode') else {}),
      **({'art_direction_revision':d.get('art_direction_revision',ROLE_COSTUME_REVISION),'role_costume_first':True,'costume_plan':d['costume_plan']} if is_role_first(d) else {}),
      **trial_metadata(d),
+     **story_metadata(d),
     'hosiery_style_hint':d.get('hosiery_style_hint','leave_to_role_design'),
     'hosiery_selected_in_wardrobe':hosiery_requested}
  if is_role_first(d):
   m['version']=d.get('art_direction_revision',ROLE_COSTUME_REVISION)
  if is_trial(d):
   m['reference_asset_sha256']=None
+ if is_story_first(d):
+  m.update(version=STORY_VERSION, source_version=STORY_VERSION)
  write_json(pending/'manifest.json',m)
  zip_path=pending.parent/(f'wardrobe-v{m["version"]}-pending-{d["draw_id"][:8]}.zip')
  with zipfile.ZipFile(zip_path,'w',compression=zipfile.ZIP_DEFLATED) as z:

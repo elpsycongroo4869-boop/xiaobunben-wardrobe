@@ -1,0 +1,59 @@
+{
+  "story_plan": {
+    "moment": "She plays softly for a rescued kitten as the last tram's lamps emerge through the first snow.",
+    "meaning": "An ordinary wait becomes a small act of companionship; her absorbed attention makes the pause worth keeping."
+  },
+  "camera_plan": {
+    "viewpoint": "Low oblique view from the end of the bench, looking toward her profile and the open violin case",
+    "optics": "An 85mm lens with gentle background compression and credible focus",
+    "frame_extent": "knee",
+    "reason": "The low diagonal joins her attentive face, the kitten and approaching lamps without turning the scene into a posed portrait."
+  },
+  "choice": {
+    "world": "A fictional riverside city during the first winter snow",
+    "role": "traveler",
+    "scene": "An old tram shelter in blue twilight",
+    "lane": "story",
+    "emotion_tone": "Tender absorption and a little reluctant hope as the last tram approaches.",
+    "creative_intent": "Keep the moment of companionship before departure, with an expressive personal outfit and an intimate off-axis view.",
+    "costume_mode": "bespoke",
+    "camera_intensity": "medium",
+    "camera_style": {
+      "name": "Snowlight and shelter lamps",
+      "medium": "Candid editorial photograph",
+      "lighting": "Cool snowlight and warm shelter-lamp spill",
+      "palette": "Deep teal, smoky black, amber and pale snow",
+      "texture": "Natural skin, wool weave, velvet pile and fine hosiery pattern",
+      "framing": "A knee-up diagonal with the face, violin case and distant lamps"
+    },
+    "costume_plan": {
+      "context_and_climate": "A wind-sheltered tram bench in the first winter snow.",
+      "role_foundation": "A wool travel cape, a wrap skirt and leather ankle boots form her personal cold-evening travel outfit.",
+      "material_anchors": [
+        "Wool",
+        "velvet",
+        "leather"
+      ],
+      "construction_anchors": [
+        "travel cape",
+        "ankle boots"
+      ],
+      "feminine_adaptation": "Shape the cape waist and open front, contrast a short wrap skirt with delicate patterned stockings and firm boots.",
+      "sensual_design_anchors": [
+        "fitted waist",
+        "wrap miniskirt"
+      ]
+    }
+  },
+  "scene_design": {
+    "subject": "A clearly adult East Asian traveler pausing with her violin at a tram stop.",
+    "setting": "An old riverside tram shelter in blue twilight, with first snow caught in amber light.",
+    "action": "Seated on the bench, she draws a slow bow while looking down toward the kitten in her open case.",
+    "cue1": "A rescued kitten curls into the lining of the open violin case beside her.",
+    "cue2": "The last tram's twin lamps approach along rails disappearing into the snowfall.",
+    "wardrobe": "Wool travel cape with a fitted waist and open front; high-waist velvet wrap miniskirt, leather ankle boots and sheer smoky-black stockings with fine floral jacquard and lace tops.",
+    "composition": "Knee-up diagonal linking her face, the kitten and distant lamps.",
+    "expression": "Her eyes soften toward the kitten, with a small absorbed smile she has not noticed.",
+    "action_physics": "Her seated hips rest on the bench; left fingers support the violin neck while her bent right elbow guides the bow."
+  }
+}

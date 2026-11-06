@@ -9,8 +9,12 @@ import json
 import sys
 from pathlib import Path
 from face_sensual_trial import is_text_face_delivery
+from story_first import is_story_first
 
 SUPPORTED_DRAWS = {'2.2', '2.3', '2.4', '2.5', '3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.5.2', '3.5.2-charm30-test', '3.5.2-charm30-expression-test','3.5.2-charm30-emotion-tone-test','3.5.2-charm70-natural-props-emotion-test','3.5.2-charm70-framing-sovereignty-test','3.5.2-charm100-framing-sovereignty-test','3.5.2-charm100-framing-compact30-test','3.5.2-charm100-sensual-framing-compact30-test','3.5.2-charm100-candid-realism-framing-compact30-test', '3.5.2-charm-index-candid-realism-framing-compact30-test', '3.5.2-charm85-role-exposure50-handphysics-compact30-test', '3.5.2-B3.2-role-first-costume-test'}  # v2.3.1 沿用 v2.3 抽签数据结构
+
+
+SUPPORTED_DRAWS.add('4.0')
 
 
 def compatible_shot(draw):
@@ -161,6 +165,9 @@ def compile_shot(draw, action=None, cue1=None, cue2=None, role_override=None, ho
         lead=f'目标画面：真人扮演经典角色「{role}」，角色对应场景「{scene}」，拍摄一张真实摄影感的角色现场照片。'
     else:
         lead=f'目标画面：在「{scene}」执行任务的「{role}」，属于「{world}」世界，拍摄一张真实摄影感的职业现场照片。'
+    if is_story_first(draw):
+        lead=('值得留下的故事瞬间：'+draw['story_plan']['moment']+
+              f' 场景「{scene}」，身份「{role}」。摄影观察位置：'+draw['camera_plan']['viewpoint']+'。')
     subject=(f'画面关键动作：{action}。'
              f'画面必须能辨认的两个真实线索：①{cues[0]}；②{cues[1]}。'
              f'主角：{person}。{cos_info}')

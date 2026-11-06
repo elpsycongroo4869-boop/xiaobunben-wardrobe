@@ -19,6 +19,7 @@ from exposure_physics import VERSION as EXPOSURE_PHYSICS_VERSION, DEFAULT_EXPOSU
 from role_costume import REVISION as ROLE_COSTUME_REVISION, is_role_first, styling_note, validate_delivery
 from role_first_costume import VERSION as B32_VERSION, COSTUME_DIRECTION, validate_costume_plan
 from face_sensual_trial import FACE_SOURCE_NOTE, is_trial, is_text_face_delivery, validate_message as validate_trial_message, metadata as trial_metadata
+from story_first import is_story_first, validate_message as validate_story_message, metadata as story_metadata
 
 SCHEMA='wardrobe-compact-photo-creation-relay-v2.9.18'
 SCHEMA_V31='wardrobe-story-first-concise-photo-relay-v3.1'
@@ -358,14 +359,24 @@ def compose_v352_compact30(fields, draw, costume_mode, expression_test=False):
     if is_text_face_delivery(draw):
         paras[0]=(draw['quality_prompt_prefix']+'\n((请创建一张照片))\n'
                   'Create ONE NEW photorealistic photograph, not an edit.')
+    if is_story_first(draw):
+        paras.insert(1, 'Story moment: '+draw['story_plan']['moment'])
+        paras[-2]=('Camera: '+pack['medium']+'; '+draw['camera_plan']['viewpoint']+'; '+pack['optics']+'; '+
+                   pack['lighting']+'; '+pack['palette']+'; '+pack['texture']+'; '+extent+' crop. Credible perspective, natural skin texture.')
+        paras[-1]=('Frame: '+fields['composition']+' Story and heroine primary; tools face their user. '
+                   'Natural crop. No watermark.')
 
     msg='\n\n'.join(paras)
     if is_role_first(draw):
         validate_delivery(draw, fields['outfit_and_function'], msg)
     if is_trial(draw):
         validate_trial_message(draw, fields['outfit_and_function'], msg)
+    if is_story_first(draw):
+        validate_story_message(draw, msg)
     baseline_draw={**draw,'version':CHARM100_FRAMING_VERSION,'delivery_version':CHARM100_FRAMING_VERSION}
     baseline=compose_v352(fields,baseline_draw,costume_mode,charm_test=True,expression_test=expression_test)
+    if is_story_first(draw):
+        baseline+='\n\nStory moment: '+draw['story_plan']['moment']+'\n\nViewpoint: '+draw['camera_plan']['viewpoint']
     target=int(len(baseline)*0.70)
     if not 1100<=len(msg)<=target:
         raise ValueError(f'Compact30 message {len(msg)} chars exceeds <=70% of original {len(baseline)} chars ({target}). Refine design wording; do not truncate signed fields.')
@@ -531,6 +542,8 @@ def build(handoff_path, visual_details_path):
         **({**trial_metadata(source_draw),'reference_asset':None,'reference_sha256':None,
             'reference_face_crop_asset':None,'reference_library_path':None,
             'reference_image_attached_to_request':False} if is_trial(source_draw) else {}),
+        **({**story_metadata(source_draw), 'version':'4.0', 'delivery_policy':'story_first_deliberate_camera_free_costume_design',
+            'note':'The selected story moment, viewpoint and optics reach the image message intact, with 21 signed visual fields. Artistic quality requires human judgment.'} if is_story_first(source_draw) else {}),
     }
 def verify(handoff, details, out):
     actual=json.loads(Path(out).read_text('utf-8'))
