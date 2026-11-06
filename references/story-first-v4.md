@@ -1,4 +1,4 @@
-# 4.0 底稿与摄影选择
+# 4.0 故事底稿与摄影选择（4.1继续沿用）
 
 先写一个值得留下的故事瞬间，再由它启发身份、世界、动作、表情、衣装与摄影。
 故事可以是轻微的停顿、发现、等待、尝试或一次情绪变化，不要求戏剧冲突或完整长篇背景。
@@ -36,6 +36,8 @@
 范围沿用：subject ≤170、setting ≤245、action ≤270、cue1/cue2 各≤220、wardrobe ≤280、composition ≤70、expression 22—130、action_physics 50—170 个英文字符。
 
 ## 交接
+
+当前4.1新底稿另外添加 `creative_notes`，格式与按钮说明见 [creative-notes-v4.1.md](creative-notes-v4.1.md)。原故事、摄影和衣装字段不变。
 
 完整例子见 `story-first-creative-fixture.json`。从全新 pending 开始：
 

@@ -11,6 +11,7 @@ import argparse, hashlib, json, sys
 from pathlib import Path
 from english_relay import canonical
 from photo_creation_relay import build_from_pending
+from creative_notes import is_notes, button_contract
 
 SCHEMA='wardrobe-button-handoff-v2.9.8'
 BUTTON='打开小笨笨衣橱'
@@ -19,6 +20,8 @@ ROUTES={'new_chat':'GenUI.issueNewTurn','copy_only':'GenUI.copy'}
 def build(pending_dir,route):
     if route not in ROUTES: raise ValueError('Unsupported button route')
     photo=build_from_pending(Path(pending_dir))
+    draw=json.loads((Path(pending_dir)/'draw.json').read_text('utf-8'))
+    fields=json.loads((Path(pending_dir)/'english-details.json').read_text('utf-8'))['fields']
     return {
         'schema':SCHEMA, 'status':'prepared_not_clicked',
         'source_draw_id':photo['draw_id'],
@@ -29,6 +32,7 @@ def build(pending_dir,route):
         'native_image_generation_succeeded':False,
         'full_workflow_tested':False,
         'history_committed':False,
+        **({'creative_notes':button_contract(draw,photo,fields)} if is_notes(draw) else {}),
     }
 
 def verify(pending_dir,route,output):

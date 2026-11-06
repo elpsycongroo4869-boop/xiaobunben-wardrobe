@@ -542,7 +542,7 @@ def build(handoff_path, visual_details_path):
         **({**trial_metadata(source_draw),'reference_asset':None,'reference_sha256':None,
             'reference_face_crop_asset':None,'reference_library_path':None,
             'reference_image_attached_to_request':False} if is_trial(source_draw) else {}),
-        **({**story_metadata(source_draw), 'version':'4.0', 'delivery_policy':'story_first_deliberate_camera_free_costume_design',
+        **({**story_metadata(source_draw), 'version':source_draw['wardrobe_version'], 'delivery_policy':'story_first_deliberate_camera_free_costume_design',
             'note':'The selected story moment, viewpoint and optics reach the image message intact, with 21 signed visual fields. Artistic quality requires human judgment.'} if is_story_first(source_draw) else {}),
     }
 def verify(handoff, details, out):

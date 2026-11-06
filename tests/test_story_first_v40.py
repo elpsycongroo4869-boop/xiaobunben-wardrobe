@@ -123,17 +123,12 @@ class StoryFirstTests(unittest.TestCase):
                     verify_from_pending(pending)
                 path.write_text(original, encoding='utf-8')
 
-    def test_current_cli_prepares_and_verifies_version_four(self):
+    def test_current_cli_verifies_a_sealed_version_four_without_upgrading_it(self):
         with tempfile.TemporaryDirectory() as tmp:
             folder = Path(tmp)
-            source = folder / 'brief.json'
-            source.write_text(json.dumps(brief()), encoding='utf-8')
-            pending = folder / 'pending'
+            pending, _ = prepare(folder / 'legacy', brief())
             entry = [sys.executable, str(ROOT / 'scripts/story_start.py')]
-            for args in (
-                    ['curate', '--pending', str(pending), '--creative-brief', str(source)],
-                    ['finish', '--pending', str(pending), '--scene-design', str(pending / 'scene-design.json')],
-                    ['verify', '--pending', str(pending)]):
+            for args in (['verify', '--pending', str(pending)],):
                 result = subprocess.run(entry + args, capture_output=True, text=True, encoding='utf-8')
                 self.assertEqual(result.returncode, 0, result.stderr)
                 self.assertEqual(json.loads(result.stdout)['version'], VERSION)

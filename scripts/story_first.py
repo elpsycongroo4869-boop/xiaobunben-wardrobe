@@ -5,12 +5,13 @@ import re
 
 VERSION = '4.0'
 REVISION = '4.0-story-first'
+SUPPORTED_REVISIONS = {REVISION: VERSION, '4.1-story-first-creative-notes': '4.1'}
 FRAME_EXTENTS = {'close', 'waist', 'mid_thigh', 'knee', 'full'}
 OUTFIT_NOTE = 'Express her personality and feminine allure through this redesigned outfit, preserving its chosen materials and signature structure.'
 
 
 def is_story_first(draw):
-    return draw.get('story_first_revision') == REVISION
+    return draw.get('story_first_revision') in SUPPORTED_REVISIONS
 
 
 def _text(value, name, minimum, maximum):
@@ -72,7 +73,8 @@ def mark_story(draw, brief):
 def validate_draw(draw):
     story, camera = draw.get('story_plan'), draw.get('camera_plan')
     validate_plans(story, camera)
-    if draw.get('version') != VERSION or draw.get('wardrobe_version') != VERSION:
+    version = SUPPORTED_REVISIONS.get(draw.get('story_first_revision'))
+    if not version or draw.get('version') != version or draw.get('wardrobe_version') != version:
         raise ValueError('4.0 needs the current story-first version snapshot')
     if draw.get('story_moment_english') != story['moment'] or draw.get('story_moment') != story['moment']:
         raise ValueError('The selected story moment changed after the creative decision')

@@ -14,7 +14,7 @@ from story_first import is_story_first
 SUPPORTED_DRAWS = {'2.2', '2.3', '2.4', '2.5', '3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.5.2', '3.5.2-charm30-test', '3.5.2-charm30-expression-test','3.5.2-charm30-emotion-tone-test','3.5.2-charm70-natural-props-emotion-test','3.5.2-charm70-framing-sovereignty-test','3.5.2-charm100-framing-sovereignty-test','3.5.2-charm100-framing-compact30-test','3.5.2-charm100-sensual-framing-compact30-test','3.5.2-charm100-candid-realism-framing-compact30-test', '3.5.2-charm-index-candid-realism-framing-compact30-test', '3.5.2-charm85-role-exposure50-handphysics-compact30-test', '3.5.2-B3.2-role-first-costume-test'}  # v2.3.1 沿用 v2.3 抽签数据结构
 
 
-SUPPORTED_DRAWS.add('4.0')
+SUPPORTED_DRAWS.update(('4.0', '4.1'))
 
 
 def compatible_shot(draw):

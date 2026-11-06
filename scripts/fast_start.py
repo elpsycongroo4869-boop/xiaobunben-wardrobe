@@ -26,6 +26,7 @@ from role_costume import REVISION as ROLE_COSTUME_REVISION, MAX_WARDROBE_CHARS, 
 from role_first_costume import VERSION as B32_VERSION, validate_costume_plan
 from face_sensual_trial import REVISION as FACE_SENSUAL_REVISION, is_trial, mark_trial, validate_trial, metadata as trial_metadata
 from story_first import VERSION as STORY_VERSION, REVISION as STORY_REVISION, is_story_first, prepare_brief, mark_story, validate_draw as validate_story_draw, hosiery_selected, metadata as story_metadata
+from creative_notes import is_notes, mark_notes, write_bundle, verify_bundle
 
 ROOT = Path(__file__).resolve().parents[1]
 CAMERA_EN = json.loads((ROOT/'references/camera-packs-en.json').read_text(encoding='utf-8'))
@@ -185,6 +186,8 @@ def stage_curate(pending, creative_brief_path, *, role_costume_first=False, face
   mark_trial(draw)
  if story_first:
   mark_story(draw, brief)
+  if 'creative_notes' in brief:
+   mark_notes(draw, brief)
  validate_design(design,draw)
  if lane in ('career','fusion','story') and not (choice['role'].lower() in design['subject'].lower() or all(x in design['subject'].lower() for x in choice['role'].lower().split() if len(x)>3)):
   # Semantic mapping from Chinese role names to English must be manually reviewed.
@@ -289,7 +292,7 @@ def stage_finish(pending, design_path, route='new_chat'):
   if is_trial(d):
    d['art_direction_revision']=FACE_SENSUAL_REVISION
   if is_story_first(d):
-   d['art_direction_revision']=STORY_REVISION
+   d['art_direction_revision']=d['story_first_revision']
  if d.get('version') in (FRAMING_VERSION,CHARM100_FRAMING_VERSION,COMPACT100_VERSION,SENSUAL100_VERSION,REAL100_VERSION,CHARM_INDEX_VERSION,EXPOSURE_PHYSICS_VERSION,B32_VERSION) or d.get('delivery_version') in (FRAMING_VERSION,CHARM100_FRAMING_VERSION,COMPACT100_VERSION,SENSUAL100_VERSION,REAL100_VERSION,CHARM_INDEX_VERSION,EXPOSURE_PHYSICS_VERSION,B32_VERSION):
   if d.get('mode')=='random' and not d.get('frame_extent'):
    d['frame_extent']=design.get('frame_extent')
@@ -335,6 +338,9 @@ def stage_finish(pending, design_path, route='new_chat'):
  write_json(pending/'photo-creation-relay.json',p)
  (pending/'photo-creation-message.txt').write_text(p['message'],encoding='utf-8')
  verify_from_pending(pending)
+ if is_notes(d):
+  write_bundle(pending,d,p,fields)
+  verify_bundle(pending)
  button=button_build(pending,route)
  write_json(pending/'button_manifest.json',button)
  button_verify(pending,route,pending/'button_manifest.json')
@@ -360,7 +366,9 @@ def stage_finish(pending, design_path, route='new_chat'):
  if is_trial(d):
   m['reference_asset_sha256']=None
  if is_story_first(d):
-  m.update(version=STORY_VERSION, source_version=STORY_VERSION)
+  m.update(version=d['wardrobe_version'], source_version=d['wardrobe_version'])
+ if is_notes(d):
+  m['creative_notes']=button['creative_notes']
  write_json(pending/'manifest.json',m)
  zip_path=pending.parent/(f'wardrobe-v{m["version"]}-pending-{d["draw_id"][:8]}.zip')
  with zipfile.ZipFile(zip_path,'w',compression=zipfile.ZIP_DEFLATED) as z:
@@ -369,7 +377,8 @@ def stage_finish(pending, design_path, route='new_chat'):
  return {'draw_id':d['draw_id'],'lane':d['lane'], 'role':s['role'], 'camera_pack_id':d['camera_pack_id'],
          'button_label':button['button_label'],'route':route,'message_sha256':p['message_sha256'],
          'message_chars':len(p['message']),'pending_zip':str(zip_path),'message_path':str(pending/'photo-creation-message.txt'),
-         'needs_library_upload':True,'image_generated':False}
+         'needs_library_upload':True,'image_generated':False,
+         **({'creative_notes_button':str(pending/'creative-notes-button.html')} if is_notes(d) else {})}
 
 def main():
  parser=argparse.ArgumentParser(description='B3.1 natural-prop and heightened-charm wardrobe TEST branch, with optional randomness and full verification')

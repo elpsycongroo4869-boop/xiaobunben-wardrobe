@@ -1,4 +1,4 @@
-# 小笨笨衣橱 4.0 / Xiaobunben Wardrobe
+# 小笨笨衣橱 4.1 / Xiaobunben Wardrobe
 
 **把创作自由交给 AI。让她自己决定每一次的角色、穿搭、故事与镜头。**
 
@@ -31,15 +31,21 @@
 - **保留角色特征，留出表达空间**：当前只使用明确成年、20岁的文字脸部设定，整合自然且有辨识度的美感、小巧精致脸型、流畅轮廓与柔和五官；不再查找或附加原黑裙参考图，也不保证每次生成完全相同的人脸。
 - **让穿搭属于一个故事**：从具体行动、两项独立故事线索和有意义的场景出发，一起设计服装、情绪、光线与构图。丝袜等服饰可以选择，不为了展示某件衣服牺牲既定镜头。
 - **让随机辅助创作**：AI 可以自行选择是否使用随机、用多少随机，也可以完全自主构思。生活片段、旅行、职业写真、Cosplay 或融合造型，都可以成为当次创作的方向。
-- **把方案核对清楚，再交接照片指令**：脚本核验 21 项视觉源字段的完整性及哈希，再准备精简指令与按钮交接；这不是对最终照片质量的自动视觉审核。实际可点击按钮需要宿主支持和相应配置，也可按既有流程复制指令到新聊天。当次方案保存在 pending 中供同方案复试，不主动登记成功样片。
+- **把方案核对清楚，再交接照片指令**：脚本核验 21 项视觉源字段的完整性及哈希，再准备精简指令与按钮交接；这不是对最终照片质量的自动视觉审核。实际可点击按钮需要宿主支持和相应配置，也可按既有流程复制指令到新聊天。当次方案和创作思路保存在同一 pending 中供查看与同方案复试，不主动登记成功样片。
 
 ## 打开你自己的角色衣橱
 
 “小笨笨”是原作者和其 GPT 之间的昵称。你可以在自己的副本中使用自己的称呼、虚构成年角色设定和合法参考素材，具体调整方法见下方“使用自己的称呼”。当前需要修改副本中的文字与常量，并没有统一的设置界面。
 
-项目以 **Skill、参考资料和 Python 脚本**提供，需要支持相应文件阅读、脚本执行与图片生成的 AI 助手环境；它不是独立网站或现成 App，也不自带图片生成模型。当前版本为 **v4.0**，详细创作规则以 [SKILL.md](SKILL.md) 为准。
+项目以 **Skill、参考资料和 Python 脚本**提供，需要支持相应文件阅读、脚本执行与图片生成的 AI 助手环境；它不是独立网站或现成 App，也不自带图片生成模型。当前版本为 **v4.1**，详细创作规则以 [SKILL.md](SKILL.md) 为准。
 
 准备尝试时，请先阅读下面的安装和使用说明。适合转发的简短介绍见 [SHARE.md](SHARE.md)，已有验证记录见 [VERIFICATION.md](VERIFICATION.md)。
+
+## v4.1 更新：每张照片的创作思路
+
+每次准备照片时，同时保存故事、情绪与动作、衣装、摄影、可见线索及看图时的对照重点，组成简短的中文设计说明。说明与该次照片提示词绑定，默认折叠，点击「创作思路」即可展开，不再次出图。
+
+优先在出图后展示；当前交接没有可靠的出图后回调，默认按备用方案与开箱按钮一起准备，建议看图后再点。说明在出图前写好，供用户区分原设计与成片的呈现，不能代替看图评价。字段和按钮说明见 [references/creative-notes-v4.1.md](references/creative-notes-v4.1.md)。
 
 ## v4.0 更新：故事瞬间与多样摄影
 
@@ -56,14 +62,14 @@
 ## 核心功能和边界
 
 - 使用 `story_start.py curate` 自主构思故事与摄影。随机可以作为灵感工具；最终新方案仍通过故事底稿完成。服装、摄影、身份、发型和表情保持自由度。
-- v4.0 的新图采用纯文字脸部设定，无需安装黑裙参考原图或脸部裁切，也不包含查找这些图片的交接指令。
+- v4.1 的新图采用纯文字脸部设定，无需安装黑裙参考原图或脸部裁切，也不包含查找这些图片的交接指令。
 - `finish` 验证 21 项来源、生成精简照片指令、校验哈希与按钮交接并打包 pending。它本身不生成图片，也不证明视觉相似度。实际可点击按钮、Library 及原生生图工具依赖宿主环境的支持。
 - 旧版规则、视觉锚点与兼容逻辑保留，已封存的旧 pending 不应重新编辑或重签。语义、人物、故事与画面仍需人工复核。
 
 ## 目录
 
 ```text
-SKILL.md                     v4.0 完整规则与操作流程
+SKILL.md                     v4.1 完整规则与操作流程
 CHANGELOG.md                 版本更新记录
 assets/README.md             当前纯文字脸部模式说明
 references/                  创作规则、摄影和角色数据、历史版本
@@ -85,7 +91,7 @@ tests/                       版本回归测试
 
 ## 使用
 
-按 `SKILL.md` 的“运行与开箱”先准备 `story_plan`、`camera_plan`，再完成 `choice.costume_plan`、七项 `scene_design`、表情与动作物理字段，然后执行 `curate` 和 `finish`，或自主决定使用 `draw`，再填写场景设计。以下路径是示例，请换成本机临时目录：
+按 `SKILL.md` 的“运行与开箱”先准备 `story_plan`、`camera_plan` 和 `creative_notes`，再完成 `choice.costume_plan`、七项 `scene_design`、表情与动作物理字段，然后执行 `curate` 和 `finish`，或自主决定使用 `draw`，再填写场景设计。以下路径是示例，请换成本机临时目录：
 
 ```bash
 python scripts/story_start.py curate --pending /tmp/wardrobe-pending --creative-brief /tmp/creative-brief.json
@@ -93,7 +99,7 @@ python scripts/story_start.py finish --pending /tmp/wardrobe-pending --scene-des
 python scripts/story_start.py verify --pending /tmp/wardrobe-pending --route new_chat
 ```
 
-完整可运行底稿见 [references/story-first-creative-fixture.json](references/story-first-creative-fixture.json)，字段说明见 [references/story-first-v4.md](references/story-first-v4.md)。
+故事与摄影底稿见 [references/story-first-creative-fixture.json](references/story-first-creative-fixture.json)；加入 [references/creative-notes-example-v4.1.json](references/creative-notes-example-v4.1.json) 的对象作为 `creative_notes`，即可运行4.1。字段说明见 [references/story-first-v4.md](references/story-first-v4.md) 和 [references/creative-notes-v4.1.md](references/creative-notes-v4.1.md)。
 
 随机仍可由助手自主选择用于寻找灵感，随后完成故事与摄影底稿。旧 `role_first_start.py` / `fast_start.py` 保留作历史格式兼容，当前新盲盒统一使用 `story_start.py`。Windows 上将 `/tmp/...` 换成有效的本机路径；每次使用新的 pending 目录。讨论或修改规则时不自动出图。
 
@@ -105,20 +111,20 @@ python scripts/story_start.py verify --pending /tmp/wardrobe-pending --route new
 
 ## 测试
 
-当前版本的四组测试共 26 项，覆盖故事与机位实际进入最终消息、多种观察角度与焦段、版本、职业衣装、材质、丝袜自主选择、新脸部文字、21 项封存和按钮消息一致性。测试不点击按钮，也不生成照片。
+当前版本的五组测试共 31 项，覆盖故事与机位实际进入最终消息、多种观察角度与焦段、版本、职业衣装、材质、丝袜自主选择、新脸部文字、21 项封存和按钮消息一致性。测试不点击按钮，也不生成照片。
 
 Windows PowerShell：
 
 ```powershell
 $env:PYTHONUTF8 = '1'
 $env:PYTHONPATH = 'tests'
-python -m unittest test_story_first_v40 test_face_sensual_trial test_role_costume_first test_b32_role_first_costume -v
+python -m unittest test_creative_notes_v41 test_story_first_v40 test_face_sensual_trial test_role_costume_first test_b32_role_first_costume -v
 ```
 
 Linux / macOS：
 
 ```bash
-PYTHONUTF8=1 PYTHONPATH=tests python -m unittest test_story_first_v40 test_face_sensual_trial test_role_costume_first test_b32_role_first_costume -v
+PYTHONUTF8=1 PYTHONPATH=tests python -m unittest test_creative_notes_v41 test_story_first_v40 test_face_sensual_trial test_role_costume_first test_b32_role_first_costume -v
 ```
 
 较早版本的测试脚本保留作历史回归材料，其中部分断言针对当时的默认入口；不要把它们的旧脸部或参考图要求当作当前创作规则。
