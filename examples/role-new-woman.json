@@ -1,0 +1,15 @@
+{
+  "schema": "wardrobe-role-v1",
+  "source": "custom",
+  "name": "林澄",
+  "age": 38,
+  "identity": "Fictional East Asian woman",
+  "appearance": "Wind-chapped cheeks, a broad nose, small dark eyes and chin-length curls with a silver streak at the left temple.",
+  "build": "Compact athletic adult build, broad upper back, strong hands and natural proportions.",
+  "personality": "习惯先动手验证，做成以后才肯让别人看见自己高兴。",
+  "wardrobe_preferences": "沿海工作服的活动量要足够。喜欢旧棉布、卷起的袖口和能单手系紧的腰带。",
+  "aesthetic_preferences": "器物的磨损和人的不对称都可以留下。",
+  "world_preferences": "海岸、市井、技艺与代际传承。",
+  "photo_preferences": "喜欢有方向的自然光，人物动作优先。",
+  "continuity": "左鬓灰白发束和日晒肤色是辨识点。职业可随故事变化。"
+}

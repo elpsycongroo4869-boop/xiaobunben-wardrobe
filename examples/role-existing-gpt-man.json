@@ -1,0 +1,15 @@
+{
+  "schema": "wardrobe-role-v1",
+  "source": "existing_gpt",
+  "name": "顾川",
+  "age": 43,
+  "identity": "Fictional East Asian man",
+  "appearance": "Square adult jaw, crooked nose from an old fall, short wavy black hair and a close salt-and-pepper beard.",
+  "build": "Tall adult build with a slightly rounded upper back, long fingers and a steady posture.",
+  "personality": "说话慢，关心别人时会先把工具递过去。把未完的承诺记得很清楚。",
+  "wardrobe_preferences": "耐磨外套、旧衬衫、系扣袖口和便于取工具的衣袋。喜欢深蓝与褪色棕。",
+  "aesthetic_preferences": "偏爱实用、有使用痕迹的物件和低饱和色。",
+  "world_preferences": "城市夜班、小型修理工坊和被拆除前的老建筑。",
+  "photo_preferences": "从现场的实际照明出发，保留侧光里的轮廓和暗部细节。",
+  "continuity": "这是既有 GPT 人设的合成测试导出。保留名字、成年年龄、旧伤鼻梁、胡须、说话节奏和衣装习惯。"
+}

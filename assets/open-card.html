@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>衣橱 · 开箱</title>
+<style>
+  :root { color-scheme: light dark; font: 16px/1.65 system-ui, sans-serif; }
+  body { margin: 0; padding: clamp(1rem, 6vw, 3.5rem); }
+  main { max-width: 38rem; margin-inline: auto; }
+  h1 { font-size: 1.75rem; margin-block: 0 .6rem; }
+  h3 { margin-block: 1.15rem .2rem; font-size: 1rem; }
+  section p { margin: 0; }
+  button { padding: .55rem 1rem; font: inherit; border-radius: .55rem; }
+  ul { padding-inline-start: 1.2rem; }
+  details { margin-block: 1.3rem; }
+  summary { width: fit-content; }
+  textarea { box-sizing: border-box; width: 100%; min-height: 12rem; padding: .5rem; font: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <h1>衣橱盲盒</h1>
+  <p>点击后复制封存的出图指令。把它粘贴到一段空白的 ChatGPT 图片对话并发送。</p>
+  <button id="open-box" type="button" disabled>__BUTTON__</button>
+  <p id="open-status" role="status" aria-live="polite">正在核对封签指令…</p>
+  <textarea id="manual-copy" aria-label="可手动复制的出图指令" readonly hidden></textarea>
+  <ul aria-label="本次创作实录">__STATUS__</ul>
+  <details><summary>创作思路</summary>__NOTES__</details>
+  <noscript>请允许此本地文件执行脚本，以便核对指令并启用开箱按钮。</noscript>
+</main>
+<script id="sealed-payload" type="application/json">__PAYLOAD__</script>
+<script>
+(() => {
+  "use strict";
+  const button = document.getElementById("open-box");
+  const status = document.getElementById("open-status");
+  const manual = document.getElementById("manual-copy");
+  const payload = JSON.parse(document.getElementById("sealed-payload").textContent);
+  async function check() {
+    try {
+      const bytes = new TextEncoder().encode(payload.message);
+      const digest = await crypto.subtle.digest("SHA-256", bytes);
+      const hex = Array.from(new Uint8Array(digest), b => b.toString(16).padStart(2, "0")).join("");
+      if (hex !== payload.messageSha256) throw new Error("Digest mismatch");
+      button.disabled = false;
+      status.textContent = "封签指令已核对，等你开箱。";
+    } catch {
+      status.textContent = "无法核对封签指令。请重新生成开箱卡，或用桌面浏览器打开。";
+    }
+  }
+  button.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(payload.message);
+      status.textContent = "已复制。到新对话粘贴并发送。";
+    } catch {
+      manual.value = payload.message;
+      manual.hidden = false;
+      manual.focus();
+      manual.select();
+      status.textContent = "请手动复制选中的指令，到新对话粘贴并发送。";
+    }
+  });
+  void check();
+})();
+</script>
+</body>
+</html>

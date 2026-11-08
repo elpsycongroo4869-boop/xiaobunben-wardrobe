@@ -1,0 +1,83 @@
+{
+  "story_plan": {
+    "moment": "After the cinema's final screening, Gu stops a film leader on a handwritten correction from the projectionist who trained him.",
+    "meaning": "The correction fixes a cue mark he had misunderstood for years. The old booth will close in the morning, but this practical piece of advice can still travel."
+  },
+  "complete_world": {
+    "full_wardrobe": "A faded indigo canvas work jacket with buttoned cuffs and a cotton flannel shirt, dark work trousers, resoled brown boots and an old key ring on his belt.",
+    "full_action": "Gu threaded the spare leader onto the hand rewinder, braced the reel on the bench and slowed the rotation until the translucent pencil arrow met the inspection plate.",
+    "offscreen_context": "The shuttered auditorium and a stack of dismantled seats are below the booth. A red fire bucket and the outgoing film can wait beside the stairs."
+  },
+  "choice": {
+    "world": "A neighborhood cinema keeping its original projection booth until the final night",
+    "role": "Cinema projectionist",
+    "costume_plan": {
+      "context_and_climate": "A warm projection room with heat left over from the lamp and a draft along the floor.",
+      "role_foundation": "An indigo work jacket protects against the dusty booth hardware and keeps loose cloth clear of the rewinder shaft.",
+      "material_anchors": [
+        "canvas"
+      ],
+      "construction_anchors": [
+        "buttoned cuffs"
+      ],
+      "style_adaptation": "Keep his established workwear cut. The buttoned cuffs hold the indigo sleeve close above his fingers.",
+      "visible_style_detail": "Buttoned cuffs pull the indigo sleeve into a neat taper just above his fingers."
+    },
+    "camera_style": {
+      "medium": "Close documentary still from the adjoining workbench",
+      "lighting": "Amber light from the inspection plate lifts the film and fingertips; a tungsten task lamp on the left picks out the near cheek",
+      "palette": "Amber film, blue-black indigo and brown shadows",
+      "texture": "Matte canvas, translucent film edges and faint scratches on the glass",
+      "framing": "His pinch on the film edge sits clear of the dark reel in the foreground, below his profile."
+    }
+  },
+  "camera_plan": {
+    "viewpoint": "At the far edge of the bench, looking obliquely across his fingers into his profile",
+    "subject_distance_m": 1.4,
+    "optics": "65mm at f/5.6 with the clear leader and near cheek in one oblique plane",
+    "frame_extent": "close",
+    "reason": "The low oblique line lets the viewer see the clue and Gu reacting in the same photograph. The rest of the booth fades behind the stopped reel."
+  },
+  "photographer_selection": {
+    "intentionally_unshown": "His profile and the leader share the shallow view along the bench. The dark auditorium, key ring and boots stay beyond the tabletop.",
+    "offscreen_not_requested": [
+      "resoled brown boots",
+      "old key ring",
+      "red fire bucket"
+    ],
+    "identity_visibility": "face"
+  },
+  "scene_design": {
+    "subject": "A cinema projectionist stops a film strip above the inspection plate and peers along its edge.",
+    "setting": "The booth after the final screening; the glass inspection plate is the last bright surface on the bench.",
+    "action": "Gu stops the strip by the perforated edge when a crooked pencil arrow comes into the square of light.",
+    "cue1": "The pencil arrow crosses out a grease mark beside the second perforation.",
+    "cue2": "An unplugged rewinder cable curls across the back of the bench as the spool stops.",
+    "wardrobe": "An indigo canvas sleeve with a crease polished by years against the workbench.",
+    "composition": "The bright leader and near cheek sit across a narrow diagonal.",
+    "action_physics": "His left index finger rests against the reel flange while his right thumb and forefinger steady the perforated film edge."
+  },
+  "emotion_review": {
+    "final_tone": "The ache of closing night interrupted by the pleasure of finally understanding.",
+    "visible_expression": "His lower lid tightens and he tilts his chin closer to the film.",
+    "review_note": "Keep the chin movement small and anchored to the pencil arrow. The stopped reel and the operator share one instant, without a pose for the viewer."
+  },
+  "creative_notes": {
+    "story": "最后一场电影散场后，顾川把备用引片倒回灯板。师傅画在孔边的歪箭头解释了多年前他记错的提示点，拆掉的放映室还留了一样东西给他。",
+    "emotion_action": "食指压住盘边，另一只手护住片孔。顾川往引片靠近一点，下眼睑收紧，视线沿着箭头重新辨认旧记号。",
+    "outfit": "沿用顾川已经有的实用穿衣习惯。深蓝帆布扣袖能避开转轴，保留手肘多年在工作台上摩擦出的亮痕。",
+    "camera": "镜头从台面斜过引片拍到顾川的侧脸。透光板负责照亮旧笔迹，左边台灯只提亮靠近镜头的脸颊。胶片盒和楼下的座椅退到画外。",
+    "visible_clues": "斜箭头盖在旧油笔点上，是师傅留下的改动。断开的电源线说明这一拍的回卷由人手完成，机器已经收工。",
+    "review_focus": "核对指尖稳住片孔，胶片没有不合物理的折角。侧脸应保留鼻梁旧伤和盐胡椒色短须，并朝向标记。"
+  },
+  "creative_audit": {
+    "focus_review": "completed",
+    "focus_evidence": "Reviewed continuity of the imported role, the physical rewinder action, the pencil correction and the face-free bench crop.",
+    "library_browsed": false,
+    "browsing_scope": "none",
+    "browsed_card_ids": [],
+    "library_adopted": false,
+    "adopted_card_ids": [],
+    "adoption_note": ""
+  }
+}

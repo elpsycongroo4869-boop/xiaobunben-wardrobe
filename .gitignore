@@ -1,28 +1,27 @@
-# Private references, in any format
+# Private roles, reference images and local runtime
+/private/
 /assets/*
-!/assets/README.md
-# Personal history and generated workflows
+!/assets/open-card.html
 /references/history.jsonl
+/references/*完整用户提示词*.txt
+/local/
+/.pending/
 /pending/
 /output/
 /outputs/
+/wardrobe-runtime/
+/runtime/
+**/*pending*/
 *.zip
-# Python and editor caches
+*.log
+
+# Environment, editor and Python files
+.env
+.env.*
+!.env.example
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .venv/
-.env
-.env.*
-!.env.example
 .DS_Store
 Thumbs.db
-
-# Additional local workflow folders
-**/*pending*/
-/wardrobe-runtime/
-/runtime/
-*.log
-
-# Private full-prompt session records
-/references/*完整用户提示词*.txt
