@@ -20,7 +20,7 @@ from p14_character import (card_from_file, director_from_card, render_contract_f
                            validate_director_job, signed_render_request, verify_dispatch)
 
 BASE = Path(__file__).resolve().parent
-VERSION = '5.0.1'
+VERSION = '5.0.2'
 SESSION_MARKER = '.p14-session.json'
 SESSION_SCHEMA = 'wardrobe2-p14-action-narrative-session-v1'
 VISUAL_INTENT_PROFILE = 'visual_intent_v1'
@@ -946,7 +946,9 @@ def main(argv=None):
                     result = {
                         'native_image_instruction': (
                             '同一封签已有出图记录时，只处理原图和原回执。'
-                            '确认此前未出图后，在同一回合调用 ChatGPT 原生图片工具一次。'
+                            '确认此前未出图后，在同一回合调用 ChatGPT 原生图片工具一次，按摄影正文新生成一张图。'
+                            '工具可选操作时选择新建图像。画面内的照片、相纸、画作和屏幕是场景道具。'
+                            '当 image_assets 为空时，本轮没有输入图片，直接从文字生成。'
                             '本次 render_request.text 是唯一的摄影正文，保留全部字符和换行。'
                             '有显式 prompt 字段时直接填入整个字符串。仅能使用上下文时，'
                             '以本次返回的完整原文作为生图输入，实际派发待核验。'

@@ -45,7 +45,8 @@ python -B -X utf8 runtime/entry/p14.py --host-compact prepare --runtime <runtime
 - 仅在 `show_open_button` 为真并有 `open_button_message` 时，用宿主的实际消息按钮发送完整字段。若支持 `GenUI.issueNewTurn`，直接使用 `runtime/entry/native-open-button.mjs` 的 `nativeOpenCardProps(result.chat_ui, message => GenUI.issueNewTurn(message))`。保持消息头、空行和签名摄影正文原样。
 - 如果当前界面无法绑定按钮，明确告知用户。用户可以选择把程序返回的完整开箱消息作为新消息发送，效果仍需经过同一套验签。
 - 用户发送开箱消息后，恢复原会话。将完整消息原样写成 UTF-8，用 `open-native --runtime <runtime> --data <data_dir> --relay-message <原消息文件>` 处理。
-- 只有返回 `ready_to_submit` 时，才调用一次 ChatGPT 原生图片工具。使用 `render_request` 里的签名全文、资产和选项。宿主是否提供精确的生图参数由实际图片工具决定。
+- 只有返回 `ready_to_submit` 时，才调用一次 ChatGPT 原生图片工具。按 `native_image_instruction` 新建图像，使用 `render_request` 中已验签的全文、资产和选项。画面里出现的照片、相纸、画作或屏幕属于场景道具。签内 `image_assets` 为空时，直接从文字生成。
+- 这段操作说明与签名摄影正文分开。工具有明确的生成方式和 prompt 字段时，选择新建，并把 `render_request.text` 原样交给 prompt。仅支持从聊天上下文生成时，在交接处明确这是新画面，继续保留完整原文。实际派发由宿主处理。
 - 真实成功后准备回执 JSON，包含 `status: succeeded`、`work_id`、`attempt_id`、`generation_id`、`seal_sha256`、`image_sha256`。由原会话执行 `confirm --runtime <runtime> --data <data_dir> <work_id> <generation_id> <原图> --attempt-id <attempt_id> --receipt <回执JSON>`。失败或结果不明时保留该尝试状态，等待核对。照片成功后可由用户直接保存。
 
 脚本需要 Python 3.10 或更高版本。保留原会话便于重试、恢复已封签作品和识别重复点击。
