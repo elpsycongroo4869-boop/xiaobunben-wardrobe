@@ -1,0 +1,16 @@
+{
+  "id": "B110",
+  "category": "星际航行与宇宙文明",
+  "title": "三体",
+  "medium": "小说／影视",
+  "world_logic": "极端天文环境、科学困境和文明级选择塑造冷峻的宇宙叙事。",
+  "inspiration_handles": [
+    "多重太阳",
+    "宇宙信号",
+    "天文观测阵列",
+    "文明档案"
+  ],
+  "open_possibilities": "可从观测员发现异常切入，也可记录宏大危机中微小的人性选择。",
+  "origin_candidate_id": "C15",
+  "overlap_notes": "与星球大战区分：硬科幻设想与宇宙文明困境优先。"
+}

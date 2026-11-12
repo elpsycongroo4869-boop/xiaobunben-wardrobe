@@ -1,0 +1,12 @@
+{
+  "schema": "wardrobe2-fixed-entry-v1",
+  "slot": "public-wardrobe2",
+  "version": "P1.3-R2",
+  "runtime_dir_name": "wardrobe2-core",
+  "archive": {
+    "path": "packages/wardrobe2-core.zip",
+    "sha256": "aaf9912cbaf36c8113b1cd6a4039a9f710049e046c0428bad8dae248dc70bb81"
+  },
+  "runtime_schema": "wardrobe2-p13-integrated-v1",
+  "readonly_default": true
+}

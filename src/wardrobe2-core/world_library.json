@@ -1,0 +1,1508 @@
+{
+  "name": "小笨笨衣橱 · 万卷故事灵感图书馆 v1.2（正式102张）",
+  "edition": "v1.2-4.3.4",
+  "count": 102,
+  "intent": "供自主创作随时翻阅，不是抽签池、必选菜单或作品复制器",
+  "permission": "允许不用、换用、融合作品、原创、现代生活、从故事倒推世界",
+  "entries": [
+    {
+      "id": "B001",
+      "category": "史诗奇幻与权谋",
+      "title": "冰与火之歌",
+      "medium": "小说／剧集",
+      "world_logic": "争夺王权的诸国与长城之外的严寒并存，龙、古老信仰与家族忠诚交织",
+      "inspiration_handles": [
+        "龙背飞行",
+        "冰墙守望",
+        "荒野狼群",
+        "宫廷密谋"
+      ],
+      "open_possibilities": "史诗行动或边境的一顿热饭；同一大陆上的人生天差地别"
+    },
+    {
+      "id": "B002",
+      "category": "史诗奇幻与权谋",
+      "title": "指环王／中土世界",
+      "medium": "小说／电影",
+      "world_logic": "不同种族共同生活的古老大陆，远行与战争并行",
+      "inspiration_handles": [
+        "精灵林地",
+        "霍比特人宴会",
+        "矮人山城",
+        "幽暗古道"
+      ],
+      "open_possibilities": "宏大远征也可只是乡村节庆中的小小插曲"
+    },
+    {
+      "id": "B003",
+      "category": "史诗奇幻与权谋",
+      "title": "猎魔人",
+      "medium": "小说／游戏",
+      "world_logic": "人类、怪物与非人族群彼此不信任，诅咒与狩猎有道德灰度",
+      "inspiration_handles": [
+        "猎魔徽章",
+        "沼泽怪影",
+        "药剂",
+        "边境酒馆"
+      ],
+      "open_possibilities": "追猎、协商、救助怪物，或一场矛盾的善意"
+    },
+    {
+      "id": "B004",
+      "category": "史诗奇幻与权谋",
+      "title": "魔兽世界",
+      "medium": "游戏",
+      "world_logic": "联盟与部落、魔法种族和庞大地理在多线冲突中并存",
+      "inspiration_handles": [
+        "飞行坐骑",
+        "萨满图腾",
+        "巨树城镇",
+        "机械侏儒"
+      ],
+      "open_possibilities": "战场以外也有驿站、集市和旅伴的日常"
+    },
+    {
+      "id": "B010",
+      "category": "史诗奇幻与权谋",
+      "title": "原创：珊瑚潮汐王国",
+      "medium": "原创世界",
+      "world_logic": "深海美人鱼国度围绕活珊瑚宫殿、鲸歌航路与水母灯塔生活",
+      "inspiration_handles": [
+        "美人鱼",
+        "市集海马",
+        "沉船图书馆",
+        "章鱼珠宝匠"
+      ],
+      "open_possibilities": "海流冒险、海底盛宴，或一只章鱼在宝箱里睡过头"
+    },
+    {
+      "id": "B011",
+      "category": "魔法童话与奇异日常",
+      "title": "哈利·波特／魔法世界",
+      "medium": "小说／电影",
+      "world_logic": "魔法学校与隐秘巫师社会并存，魔法生物、飞行与日常课程有规则",
+      "inspiration_handles": [
+        "魔杖",
+        "扫帚",
+        "猫头鹰信件",
+        "魔药课堂"
+      ],
+      "open_possibilities": "战斗之外也有考试、魔法厨房和闹笑话的宠物"
+    },
+    {
+      "id": "B012",
+      "category": "魔法童话与奇异日常",
+      "title": "哈尔的移动城堡",
+      "medium": "小说／动画",
+      "world_logic": "会移动的城堡与奇怪契约穿行战乱的魔法乡野",
+      "inspiration_handles": [
+        "移动机械城堡",
+        "壁炉火魔",
+        "荒野市场",
+        "变形咒"
+      ],
+      "open_possibilities": "会飞的家、古怪小事、勇气与自我变化"
+    },
+    {
+      "id": "B013",
+      "category": "魔法童话与奇异日常",
+      "title": "魔女宅急便",
+      "medium": "小说／动画",
+      "world_logic": "年轻魔女的独立生活与飞行送货穿插在普通海滨城市",
+      "inspiration_handles": [
+        "扫帚快递",
+        "黑猫同伴",
+        "海港屋顶",
+        "面包店"
+      ],
+      "open_possibilities": "生活的笨拙与成长，比施放最强魔法更重要"
+    },
+    {
+      "id": "B014",
+      "category": "魔法童话与奇异日常",
+      "title": "千与千寻",
+      "medium": "电影",
+      "world_logic": "通往灵异浴场的边界，名字、契约与妖怪社会交织",
+      "inspiration_handles": [
+        "夜晚列车",
+        "灵怪浴场",
+        "纸式神",
+        "河灵"
+      ],
+      "open_possibilities": "陌生世界里的劳动、友情、记忆与勇气"
+    },
+    {
+      "id": "B015",
+      "category": "魔法童话与奇异日常",
+      "title": "爱丽丝梦游仙境",
+      "medium": "小说",
+      "world_logic": "大小、时间和语言逻辑随时翻转的梦境王国",
+      "inspiration_handles": [
+        "会说话的茶具",
+        "怀表兔",
+        "蘑菇森林",
+        "纸牌庭院"
+      ],
+      "open_possibilities": "既能荒诞追逐，也能记录一场奇怪的下午茶"
+    },
+    {
+      "id": "B016",
+      "category": "魔法童话与奇异日常",
+      "title": "绿野仙踪",
+      "medium": "小说／电影",
+      "world_logic": "通往翡翠城的道路连接不同魔法国度与伙伴的愿望",
+      "inspiration_handles": [
+        "黄砖路",
+        "翡翠城",
+        "稻草人",
+        "飞猴"
+      ],
+      "open_possibilities": "旅程、友情、错认身份，或在路边看见小奇迹"
+    },
+    {
+      "id": "B017",
+      "category": "魔法童话与奇异日常",
+      "title": "魔卡少女樱",
+      "medium": "漫画／动画",
+      "world_logic": "日常校园与被赋予形态的魔法卡牌相交",
+      "inspiration_handles": [
+        "飞行羽翼",
+        "季节法术",
+        "魔杖",
+        "会行动的卡牌"
+      ],
+      "open_possibilities": "超自然事件可以出现在放学路上的普通一刻"
+    },
+    {
+      "id": "B018",
+      "category": "魔法童话与奇异日常",
+      "title": "葬送的芙莉莲",
+      "medium": "漫画／动画",
+      "world_logic": "长寿魔法师在人类短暂岁月之后旅行，魔法也服务细小愿望",
+      "inspiration_handles": [
+        "古旧法术书",
+        "夕阳遗迹",
+        "花田魔法",
+        "旅人营火"
+      ],
+      "open_possibilities": "强大法术和怀念故人可以在一张照片里共存"
+    },
+    {
+      "id": "B020",
+      "category": "魔法童话与奇异日常",
+      "title": "原创：雨滴魔药铺",
+      "medium": "原创世界",
+      "world_logic": "雨水能被酿成不同天气的魔药，每只瓶子保存一段微小气候",
+      "inspiration_handles": [
+        "会下雨的玻璃瓶",
+        "会喷嚏的老鼠",
+        "绿色大锅",
+        "云朵架"
+      ],
+      "open_possibilities": "女巫失手、食客惊奇、魔药改变一场普通晚餐"
+    },
+    {
+      "id": "B021",
+      "category": "东方武侠忍者与神话",
+      "title": "火影忍者",
+      "medium": "漫画／动画",
+      "world_logic": "忍村、查克拉和不同忍术流派构成任务与羁绊并存的社会",
+      "inspiration_handles": [
+        "结印",
+        "水遁",
+        "忍者屋顶",
+        "通灵兽"
+      ],
+      "open_possibilities": "忍术对战、夜间潜入，或忍者的拉面日常"
+    },
+    {
+      "id": "B022",
+      "category": "东方武侠忍者与神话",
+      "title": "鬼灭之刃",
+      "medium": "漫画／动画",
+      "world_logic": "近代日本乡野里猎鬼人与夜行怪物对抗，呼吸法成为武艺语言",
+      "inspiration_handles": [
+        "日轮刀",
+        "紫藤花",
+        "山中旅舍",
+        "夜雾"
+      ],
+      "open_possibilities": "紧张斩击之后，也可以有人守着一盏灯等归来"
+    },
+    {
+      "id": "B023",
+      "category": "东方武侠忍者与神话",
+      "title": "咒术回战",
+      "medium": "漫画／动画",
+      "world_logic": "现代城市的负面情绪孕育咒灵，术师隐秘作战",
+      "inspiration_handles": [
+        "符咒",
+        "结界",
+        "城市地下通道",
+        "式神"
+      ],
+      "open_possibilities": "惊险驱魔、同伴默契与繁忙城市里的片刻平静"
+    },
+    {
+      "id": "B024",
+      "category": "东方武侠忍者与神话",
+      "title": "犬夜叉",
+      "medium": "漫画／动画",
+      "world_logic": "战国时代与现代往返，妖怪、灵力与四魂碎片牵动旅途",
+      "inspiration_handles": [
+        "战国神社",
+        "妖怪森林",
+        "弓箭",
+        "古井"
+      ],
+      "open_possibilities": "不同时间的相遇、妖怪友谊、古道追逐"
+    },
+    {
+      "id": "B025",
+      "category": "东方武侠忍者与神话",
+      "title": "西游记",
+      "medium": "神魔小说",
+      "world_logic": "取经旅程横贯妖怪国度、天庭与人间，法宝和变化无穷",
+      "inspiration_handles": [
+        "筋斗云",
+        "山妖洞府",
+        "金箍棒",
+        "月下寺庙"
+      ],
+      "open_possibilities": "巨大神通可以拍得壮观，也可成为一个滑稽误会"
+    },
+    {
+      "id": "B026",
+      "category": "东方武侠忍者与神话",
+      "title": "射雕英雄传",
+      "medium": "武侠小说",
+      "world_logic": "江湖门派、家国冲突与名山大川构成侠义生活",
+      "inspiration_handles": [
+        "竹林轻功",
+        "古城擂台",
+        "江边小舟",
+        "武学秘籍"
+      ],
+      "open_possibilities": "比武、护送、守诺，以及侠客的普通一天"
+    },
+    {
+      "id": "B027",
+      "category": "东方武侠忍者与神话",
+      "title": "仙剑奇侠传",
+      "medium": "游戏／剧集",
+      "world_logic": "蜀山、妖灵、人世与仙术牵动情感羁绊",
+      "inspiration_handles": [
+        "御剑飞行",
+        "灵符",
+        "苗疆山水",
+        "古镇客栈"
+      ],
+      "open_possibilities": "仙术可能改变战局，也能用来找回丢失的小物件"
+    },
+    {
+      "id": "B028",
+      "category": "东方武侠忍者与神话",
+      "title": "只狼：影逝二度",
+      "medium": "游戏",
+      "world_logic": "架空战国的忍术、义手、忠诚与不死传说互相拉扯",
+      "inspiration_handles": [
+        "屋脊潜行",
+        "机关义手",
+        "寺院雪夜",
+        "钩绳"
+      ],
+      "open_possibilities": "极限战斗之外亦有漫长等待和隐秘相守"
+    },
+    {
+      "id": "B029",
+      "category": "东方武侠忍者与神话",
+      "title": "山海经",
+      "medium": "古籍神话",
+      "world_logic": "奇禽异兽与奇山异水构成不受现实地理限制的想象宇宙",
+      "inspiration_handles": [
+        "九尾狐",
+        "鲲鹏",
+        "怪石山海",
+        "异色河流"
+      ],
+      "open_possibilities": "与巨兽对视、照料神鸟、穿越非常之地"
+    },
+    {
+      "id": "B030",
+      "category": "东方武侠忍者与神话",
+      "title": "原创：云上镖局",
+      "medium": "原创世界",
+      "world_logic": "江湖镖师使用纸鹤和浮空驿道运输秘密信物，门派规矩仍严谨",
+      "inspiration_handles": [
+        "云间吊桥",
+        "纸鹤镖车",
+        "竹伞剑",
+        "山雨驿亭"
+      ],
+      "open_possibilities": "护镖决斗也可以是找回错投的一封家书"
+    },
+    {
+      "id": "B031",
+      "category": "都市英雄与暗夜奇谈",
+      "title": "蝙蝠侠／哥谭",
+      "medium": "漫画／电影",
+      "world_logic": "都市犯罪、暗夜义警、双重身份与极端装置构成紧张的哥谭",
+      "inspiration_handles": [
+        "滴水石像鬼",
+        "探照蝠影",
+        "屋顶追逐",
+        "猫女"
+      ],
+      "open_possibilities": "惊险追逃、惊恐反应、暗巷中的意外帮助"
+    },
+    {
+      "id": "B032",
+      "category": "都市英雄与暗夜奇谈",
+      "title": "蜘蛛侠",
+      "medium": "漫画／电影",
+      "world_logic": "超级英雄的城市救援与普通年轻人的生活难题交织",
+      "inspiration_handles": [
+        "高楼蛛丝",
+        "地铁",
+        "摄影包",
+        "邻里小店"
+      ],
+      "open_possibilities": "高空救援或一次被打断的日常约会"
+    },
+    {
+      "id": "B033",
+      "category": "都市英雄与暗夜奇谈",
+      "title": "X战警",
+      "medium": "漫画／电影",
+      "world_logic": "超能力者与社会偏见共存，学院与团体立场复杂",
+      "inspiration_handles": [
+        "变种能力",
+        "训练场",
+        "金属走廊",
+        "社会抗议"
+      ],
+      "open_possibilities": "力量的代价、身份认同、陌生人之间的信任"
+    },
+    {
+      "id": "B034",
+      "category": "都市英雄与暗夜奇谈",
+      "title": "奇异博士",
+      "medium": "漫画／电影",
+      "world_logic": "现代街巷连着镜像维度、秘术和时空裂口",
+      "inspiration_handles": [
+        "悬浮斗篷",
+        "镜像建筑",
+        "法阵",
+        "圣所书房"
+      ],
+      "open_possibilities": "城市几何倒转，也可能只为救一只迷路的猫"
+    },
+    {
+      "id": "B035",
+      "category": "都市英雄与暗夜奇谈",
+      "title": "地狱男爵",
+      "medium": "漫画／电影",
+      "world_logic": "秘术、古代怪物与特工调查共存在黑色幽默世界",
+      "inspiration_handles": [
+        "古堡钟楼",
+        "怪奇遗物",
+        "地下档案",
+        "异界大门"
+      ],
+      "open_possibilities": "恐怖调查、怪物互助与荒诞伙伴关系"
+    },
+    {
+      "id": "B036",
+      "category": "都市英雄与暗夜奇谈",
+      "title": "守望者",
+      "medium": "漫画",
+      "world_logic": "蒙面英雄、政治阴影和道德模糊的冷战式架空都市",
+      "inspiration_handles": [
+        "雨夜旧街",
+        "破损面具",
+        "墙面涂鸦",
+        "报纸"
+      ],
+      "open_possibilities": "英雄是否值得信任、普通人会怎样应对危机"
+    },
+    {
+      "id": "B037",
+      "category": "都市英雄与暗夜奇谈",
+      "title": "忍者神龟",
+      "medium": "漫画／影视",
+      "world_logic": "纽约地下水道、滑稽格斗与街头年轻文化结合",
+      "inspiration_handles": [
+        "披萨盒",
+        "下水道基地",
+        "滑板",
+        "夜间屋顶"
+      ],
+      "open_possibilities": "街头追逐之外，伙伴间的玩笑和小小善意"
+    },
+    {
+      "id": "B040",
+      "category": "都市英雄与暗夜奇谈",
+      "title": "原创：午夜灯塔市",
+      "medium": "原创世界",
+      "world_logic": "整座城市只在夜里开放，所有人用灯光信号交换身份与消息",
+      "inspiration_handles": [
+        "灯塔摩天楼",
+        "荧光雨巷",
+        "影子车站",
+        "发光伞"
+      ],
+      "open_possibilities": "暗夜追逐、身份误认或极温暖的街角重逢"
+    },
+    {
+      "id": "B041",
+      "category": "星际航行与宇宙文明",
+      "title": "星球大战",
+      "medium": "电影／剧集／游戏",
+      "world_logic": "星系帝国、反抗军、原力与数千星球的异族文化共存",
+      "inspiration_handles": [
+        "光剑",
+        "太空港",
+        "机器人同伴",
+        "双日落沙漠"
+      ],
+      "open_possibilities": "星际激战之外也能只是宇宙港的一杯热饮"
+    },
+    {
+      "id": "B042",
+      "category": "星际航行与宇宙文明",
+      "title": "星际迷航",
+      "medium": "剧集／电影",
+      "world_logic": "星舰探索未知文明，外交、科学与第一接触同样重要",
+      "inspiration_handles": [
+        "舰桥",
+        "曲速航行",
+        "外星植物",
+        "传送装置"
+      ],
+      "open_possibilities": "未知发现、文化误解、科研团队里的奇妙日常"
+    },
+    {
+      "id": "B043",
+      "category": "星际航行与宇宙文明",
+      "title": "沙丘",
+      "medium": "小说／电影",
+      "world_logic": "沙漠星球的香料资源、贵族争斗、生态与预言互相绑定",
+      "inspiration_handles": [
+        "巨型沙虫",
+        "沙漠防护服",
+        "风暴",
+        "宫廷仪式"
+      ],
+      "open_possibilities": "沙海求生、政治命运或小小的生态观察"
+    },
+    {
+      "id": "B047",
+      "category": "星际航行与宇宙文明",
+      "title": "异形",
+      "medium": "电影",
+      "world_logic": "深空货船与未知寄生生物制造封闭空间危机",
+      "inspiration_handles": [
+        "货舱",
+        "扫描仪",
+        "狭长通风管",
+        "异星卵"
+      ],
+      "open_possibilities": "孤独求生、机器与人的信任边界"
+    },
+    {
+      "id": "B050",
+      "category": "星际航行与宇宙文明",
+      "title": "原创：鲸群星港",
+      "medium": "原创世界",
+      "world_logic": "巨型太空生物穿行星云，流浪城市附着在它们背上的生态圈",
+      "inspiration_handles": [
+        "星云鲸",
+        "背部港口",
+        "真空温室",
+        "磁力渡船"
+      ],
+      "open_possibilities": "给鲸背村庄送信，或帮助落单幼鲸重返星群"
+    },
+    {
+      "id": "B051",
+      "category": "赛博科技与机械生命",
+      "title": "赛博朋克2077",
+      "medium": "游戏",
+      "world_logic": "企业控制的巨型霓虹都市，义体改造和街头文化碰撞",
+      "inspiration_handles": [
+        "义眼",
+        "机车",
+        "全息广告",
+        "雨夜高架"
+      ],
+      "open_possibilities": "飙车和黑客行动之外，也有义体故障的小烦恼"
+    },
+    {
+      "id": "B052",
+      "category": "赛博科技与机械生命",
+      "title": "攻壳机动队",
+      "medium": "漫画／动画",
+      "world_logic": "高度义体化社会的网络意识、公安调查与身份困惑交织",
+      "inspiration_handles": [
+        "光学迷彩",
+        "神经接口",
+        "雨中高楼",
+        "机械义肢"
+      ],
+      "open_possibilities": "追查记忆、机械身体里的人性瞬间"
+    },
+    {
+      "id": "B053",
+      "category": "赛博科技与机械生命",
+      "title": "银翼杀手",
+      "medium": "小说／电影",
+      "world_logic": "雨夜都市里仿生人和人类的边界变得模糊",
+      "inspiration_handles": [
+        "巨型广告",
+        "飞行车",
+        "霓虹雨棚",
+        "旧照片"
+      ],
+      "open_possibilities": "追逐之外，一件旧物带来的自我怀疑"
+    },
+    {
+      "id": "B054",
+      "category": "赛博科技与机械生命",
+      "title": "黑客帝国",
+      "medium": "电影",
+      "world_logic": "模拟现实背后是机器控制，人类通过规则漏洞反抗",
+      "inspiration_handles": [
+        "绿色代码雨",
+        "超常跳跃",
+        "镜面走廊",
+        "皮衣"
+      ],
+      "open_possibilities": "改变物理规则，也可是一场突然觉醒的日常"
+    },
+    {
+      "id": "B055",
+      "category": "赛博科技与机械生命",
+      "title": "底特律：变人",
+      "medium": "游戏",
+      "world_logic": "家务、服务与治安仿生人开始追问自由与道德身份",
+      "inspiration_handles": [
+        "仿生人指示灯",
+        "城市广场",
+        "机器人家庭",
+        "雨夜"
+      ],
+      "open_possibilities": "机械生命第一次作出自己的小选择"
+    },
+    {
+      "id": "B056",
+      "category": "赛博科技与机械生命",
+      "title": "尼尔：机械纪元",
+      "medium": "游戏",
+      "world_logic": "战后废墟中的人造生命执行任务并怀疑使命",
+      "inspiration_handles": [
+        "白发战斗人造人",
+        "荒废游乐园",
+        "机械村",
+        "巨型塔"
+      ],
+      "open_possibilities": "激烈战斗或机器人学习种花"
+    },
+    {
+      "id": "B057",
+      "category": "赛博科技与机械生命",
+      "title": "地平线：零之曙光",
+      "medium": "游戏",
+      "world_logic": "原始部族与动物形态机器共同生活，旧科技成为神秘遗迹",
+      "inspiration_handles": [
+        "机械恐龙",
+        "部落装饰",
+        "荧光零件",
+        "草原遗迹"
+      ],
+      "open_possibilities": "猎杀巨兽，也可以安抚一只机械幼兽"
+    },
+    {
+      "id": "B058",
+      "category": "赛博科技与机械生命",
+      "title": "阿基拉",
+      "medium": "漫画／电影",
+      "world_logic": "霓虹都市、青年反叛与失控的超能力造成巨大社会震荡",
+      "inspiration_handles": [
+        "红色摩托",
+        "夜间高架",
+        "研究设施",
+        "裂开的路面"
+      ],
+      "open_possibilities": "速度与混乱，也能记录逃亡中的片刻选择"
+    },
+    {
+      "id": "B059",
+      "category": "赛博科技与机械生命",
+      "title": "副本／碳变",
+      "medium": "小说／剧集",
+      "world_logic": "意识可以储存并更换肉身，财富和身份获得新的不平等",
+      "inspiration_handles": [
+        "意识芯片",
+        "豪华高楼",
+        "替身身体",
+        "悬浮车"
+      ],
+      "open_possibilities": "身体与记忆的不一致、跨阶层的亲密关系"
+    },
+    {
+      "id": "B060",
+      "category": "赛博科技与机械生命",
+      "title": "原创：缝补月光的机器人",
+      "medium": "原创世界",
+      "world_logic": "夜晚城市由维护型机器人缝合破裂的人工月幕",
+      "inspiration_handles": [
+        "银丝针",
+        "月幕裂缝",
+        "旧型机器猫",
+        "城市天窗"
+      ],
+      "open_possibilities": "修理天空、寻找失踪零件或第一次感受月光"
+    },
+    {
+      "id": "B061",
+      "category": "废土末日与生存异变",
+      "title": "最后生还者",
+      "medium": "游戏／剧集",
+      "world_logic": "真菌感染后的城市荒野，危险群体与情感纽带共存",
+      "inspiration_handles": [
+        "孢子废楼",
+        "爬藤公路",
+        "临时营地",
+        "旧吉他"
+      ],
+      "open_possibilities": "危机逃亡和在废墟里教人弹琴同样有力量"
+    },
+    {
+      "id": "B062",
+      "category": "废土末日与生存异变",
+      "title": "生化危机",
+      "medium": "游戏／电影",
+      "world_logic": "生化实验、病毒事件与幸存者在被封锁的城市求生",
+      "inspiration_handles": [
+        "警局走廊",
+        "实验室",
+        "城市封锁线",
+        "急救包"
+      ],
+      "open_possibilities": "惊险突围、守护同伴、解开实验真相"
+    },
+    {
+      "id": "B063",
+      "category": "废土末日与生存异变",
+      "title": "辐射",
+      "medium": "游戏／剧集",
+      "world_logic": "核战后荒野拥有避难所文化与复古未来科技",
+      "inspiration_handles": [
+        "避难所制服",
+        "动力装甲",
+        "废土商队",
+        "变异生物"
+      ],
+      "open_possibilities": "荒原竞速、聚落庆典或废墟中的旧贩卖机"
+    },
+    {
+      "id": "B064",
+      "category": "废土末日与生存异变",
+      "title": "疯狂的麦克斯",
+      "medium": "电影",
+      "world_logic": "资源匮乏的荒漠废土以改装车辆、燃料和水争夺生存",
+      "inspiration_handles": [
+        "重型摩托",
+        "沙尘车队",
+        "铁质装甲",
+        "断裂高架"
+      ],
+      "open_possibilities": "速度与追逐，也可能是护送一桶干净水"
+    },
+    {
+      "id": "B065",
+      "category": "废土末日与生存异变",
+      "title": "地铁2033",
+      "medium": "小说／游戏",
+      "world_logic": "地表辐射后人类定居地铁，隧道和地表都隐藏危险",
+      "inspiration_handles": [
+        "防毒面具",
+        "老旧车站",
+        "昏黄灯",
+        "辐射雪"
+      ],
+      "open_possibilities": "隧道护送、废弃站台里的秘密花园"
+    },
+    {
+      "id": "B066",
+      "category": "废土末日与生存异变",
+      "title": "行尸走肉",
+      "medium": "漫画／剧集",
+      "world_logic": "丧尸持续存在，幸存者社区比怪物本身更考验选择",
+      "inspiration_handles": [
+        "铁丝围栏",
+        "旧农场",
+        "废弃超市",
+        "破损公路"
+      ],
+      "open_possibilities": "骑车逃亡，或在夜里照顾一只小猫"
+    },
+    {
+      "id": "B067",
+      "category": "废土末日与生存异变",
+      "title": "死亡搁浅",
+      "medium": "游戏",
+      "world_logic": "生死边界异常，城市彼此隔绝，货物配送连接孤立居民",
+      "inspiration_handles": [
+        "未来送货背架",
+        "时间雨",
+        "绳索",
+        "荒原海岸"
+      ],
+      "open_possibilities": "穿越危险山路或为一户人家送来生日蛋糕"
+    },
+    {
+      "id": "B068",
+      "category": "废土末日与生存异变",
+      "title": "雪国列车",
+      "medium": "电影／剧集",
+      "world_logic": "冰封地球上幸存者住在永不停歇的列车，车厢分层森严",
+      "inspiration_handles": [
+        "冰窗",
+        "狭窄车厢",
+        "温室车",
+        "钢铁机械"
+      ],
+      "open_possibilities": "阶层冲突之外也有窗前种下第一株花"
+    },
+    {
+      "id": "B069",
+      "category": "废土末日与生存异变",
+      "title": "潜行者／S.T.A.L.K.E.R.",
+      "medium": "游戏",
+      "world_logic": "异常地带扭曲物理规则，猎人深入污染区寻找遗物",
+      "inspiration_handles": [
+        "异常电弧",
+        "探测螺栓",
+        "防护服",
+        "废弃设施"
+      ],
+      "open_possibilities": "险境探索、神秘物件或异常区域里的静谧"
+    },
+    {
+      "id": "B070",
+      "category": "废土末日与生存异变",
+      "title": "原创：海啸后的屋顶群岛",
+      "medium": "原创世界",
+      "world_logic": "大洪水淹没旧城，屋顶之间架起索桥与水路新社会",
+      "inspiration_handles": [
+        "屋顶菜田",
+        "潜水快递",
+        "旧电车船",
+        "漂流图书馆"
+      ],
+      "open_possibilities": "冒险搜救，也有水上集市和雨后的早餐"
+    },
+    {
+      "id": "B071",
+      "category": "历史航海与平行时代",
+      "title": "刺客信条",
+      "medium": "游戏",
+      "world_logic": "多个历史城市和秘密组织交叠，潜行与时代细节共存",
+      "inspiration_handles": [
+        "屋顶跑酷",
+        "袖剑",
+        "港口市集",
+        "石造塔楼"
+      ],
+      "open_possibilities": "惊险暗行、古城节庆或民间小人物的秘密"
+    },
+    {
+      "id": "B072",
+      "category": "历史航海与平行时代",
+      "title": "加勒比海盗",
+      "medium": "电影",
+      "world_logic": "传奇航海时代的诅咒、海盗与神秘海岛交错",
+      "inspiration_handles": [
+        "风暴帆船",
+        "藏宝罗盘",
+        "海盗港",
+        "诅咒金币"
+      ],
+      "open_possibilities": "海战、寻宝、船上宠物惹麻烦"
+    },
+    {
+      "id": "B073",
+      "category": "历史航海与平行时代",
+      "title": "荒野大镖客",
+      "medium": "游戏",
+      "world_logic": "美国西部时代的马匹、城镇、荒野与帮派生活",
+      "inspiration_handles": [
+        "骑马沙漠",
+        "篝火",
+        "蒸汽火车",
+        "酒馆"
+      ],
+      "open_possibilities": "惊险追逐或给陌生人送一封未寄出的信"
+    },
+    {
+      "id": "B074",
+      "category": "历史航海与平行时代",
+      "title": "福尔摩斯",
+      "medium": "小说／影视",
+      "world_logic": "维多利亚伦敦的科学推理、阶层生活与雾中谜团",
+      "inspiration_handles": [
+        "煤气灯街",
+        "指纹线索",
+        "马车",
+        "侦探笔记"
+      ],
+      "open_possibilities": "抽丝剥茧，也能在茶室记录一个无害谜团"
+    },
+    {
+      "id": "B075",
+      "category": "历史航海与平行时代",
+      "title": "三个火枪手",
+      "medium": "小说",
+      "world_logic": "法国宫廷与剑客荣誉、友谊、阴谋交织",
+      "inspiration_handles": [
+        "佩剑",
+        "羽饰帽",
+        "宫廷舞会",
+        "护卫马队"
+      ],
+      "open_possibilities": "营救、交锋、誓言，以及紧张前的一次玩笑"
+    },
+    {
+      "id": "B076",
+      "category": "历史航海与平行时代",
+      "title": "黄金神威",
+      "medium": "漫画／动画",
+      "world_logic": "二十世纪初北境雪林，寻宝与多元文化知识相遇",
+      "inspiration_handles": [
+        "雪橇",
+        "旧步枪",
+        "野外炊具",
+        "冰河"
+      ],
+      "open_possibilities": "求生、文化交流或一顿充满意外的野炊"
+    },
+    {
+      "id": "B077",
+      "category": "历史航海与平行时代",
+      "title": "卧虎藏龙",
+      "medium": "小说／电影",
+      "world_logic": "江湖武艺、家族规矩与个人自由冲突在古典山水之间",
+      "inspiration_handles": [
+        "竹海轻功",
+        "长剑",
+        "古镇屋檐",
+        "官道"
+      ],
+      "open_possibilities": "江湖奔逃与难以言说的心意"
+    },
+    {
+      "id": "B078",
+      "category": "历史航海与平行时代",
+      "title": "印第安纳·琼斯",
+      "medium": "电影",
+      "world_logic": "二十世纪冒险考古中遗迹、谜题和危险机关不断出现",
+      "inspiration_handles": [
+        "古墓机关",
+        "地图",
+        "热带遗迹",
+        "旧式飞机"
+      ],
+      "open_possibilities": "探险夺宝，也可以保护不起眼的历史物品"
+    },
+    {
+      "id": "B079",
+      "category": "历史航海与平行时代",
+      "title": "原创：巨兽原始纪元",
+      "medium": "原创世界",
+      "world_logic": "架空史前大陆上原始部落与恐龙巨兽共存，迁徙和狩猎受到季风影响",
+      "inspiration_handles": [
+        "霸王龙",
+        "石矛女猎手",
+        "蕨类巨林",
+        "巨兽足迹"
+      ],
+      "open_possibilities": "大战后的保护小鸟、族群迁徙，或在恐龙背影下偷偷拾蛋"
+    },
+    {
+      "id": "B080",
+      "category": "历史航海与平行时代",
+      "title": "原创：钟摆城邦",
+      "medium": "原创世界",
+      "world_logic": "蒸汽时代城邦以巨型钟摆分配日照，街区每天依时轮转",
+      "inspiration_handles": [
+        "黄铜齿轮",
+        "空中电车",
+        "蒸汽邮局",
+        "移动花园"
+      ],
+      "open_possibilities": "追赶城市时钟，也可修好一只走慢的表"
+    },
+    {
+      "id": "B081",
+      "category": "自然生态与温暖奇遇",
+      "title": "龙猫",
+      "medium": "电影",
+      "world_logic": "乡野生活与温柔森林精灵在日常边缘相遇",
+      "inspiration_handles": [
+        "森林巴士站",
+        "树洞",
+        "猫巴士",
+        "雨伞"
+      ],
+      "open_possibilities": "普通乡间下午里突然出现不可思议的朋友"
+    },
+    {
+      "id": "B082",
+      "category": "自然生态与温暖奇遇",
+      "title": "幽灵公主",
+      "medium": "电影",
+      "world_logic": "人类工业扩张与森林神灵冲突，巨兽与自然都有立场",
+      "inspiration_handles": [
+        "山犬",
+        "森林精灵",
+        "铁城",
+        "神鹿"
+      ],
+      "open_possibilities": "战斗、调解、救治幼兽与人与自然的选择"
+    },
+    {
+      "id": "B083",
+      "category": "自然生态与温暖奇遇",
+      "title": "风之谷",
+      "medium": "漫画／电影",
+      "world_logic": "腐海与巨型昆虫的生态复杂危险，微小善意影响平衡",
+      "inspiration_handles": [
+        "王虫",
+        "毒孢森林",
+        "风滑翔翼",
+        "古代机械"
+      ],
+      "open_possibilities": "飞行求生，也能观察一株无毒花"
+    },
+    {
+      "id": "B084",
+      "category": "自然生态与温暖奇遇",
+      "title": "降世神通：最后的气宗",
+      "medium": "动画",
+      "world_logic": "四元素御术与各国文化互相制衡，灵界与现实相邻",
+      "inspiration_handles": [
+        "御水",
+        "风之滑翔",
+        "飞天野牛",
+        "灵界灯"
+      ],
+      "open_possibilities": "御术大战或帮朋友修好一口茶壶"
+    },
+    {
+      "id": "B085",
+      "category": "自然生态与温暖奇遇",
+      "title": "阿凡达／潘多拉",
+      "medium": "电影",
+      "world_logic": "发光雨林、连通生命网络与浮空山岳构成外星生态",
+      "inspiration_handles": [
+        "发光种子",
+        "翼兽",
+        "灵魂树",
+        "悬浮群山"
+      ],
+      "open_possibilities": "骑乘飞兽、林间相遇或守护一段生命连接"
+    },
+    {
+      "id": "B086",
+      "category": "自然生态与温暖奇遇",
+      "title": "宝可梦",
+      "medium": "游戏／动画",
+      "world_logic": "人与丰富神奇生物共生，旅行、竞技与照料都成立",
+      "inspiration_handles": [
+        "精灵伙伴",
+        "道馆",
+        "草原营地",
+        "神奇果实"
+      ],
+      "open_possibilities": "激烈对战或为迷路小精灵找家"
+    },
+    {
+      "id": "B087",
+      "category": "自然生态与温暖奇遇",
+      "title": "动物森友会",
+      "medium": "游戏",
+      "world_logic": "慢节奏岛屿社区由拟人动物与季节活动构成",
+      "inspiration_handles": [
+        "海边贝壳",
+        "树屋",
+        "节日灯饰",
+        "岛上集市"
+      ],
+      "open_possibilities": "小小误会、邻居礼物和生活的幸福感"
+    },
+    {
+      "id": "B090",
+      "category": "自然生态与温暖奇遇",
+      "title": "塞尔达传说",
+      "medium": "游戏",
+      "world_logic": "海拉鲁古老文明、神庙谜题、魔物与开放山野并存",
+      "inspiration_handles": [
+        "滑翔伞",
+        "遗迹机关",
+        "精灵泉",
+        "村庄篝火"
+      ],
+      "open_possibilities": "冒险、解谜或在路边给旅人做一锅汤"
+    },
+    {
+      "id": "B091",
+      "category": "梦境时间与另类法则",
+      "title": "盗梦空间",
+      "medium": "电影",
+      "world_logic": "共享梦境由潜意识与层级时间构成，现实地形可不遵守常规",
+      "inspiration_handles": [
+        "折叠城市",
+        "旋转走廊",
+        "深梦雪堡",
+        "陀螺"
+      ],
+      "open_possibilities": "意识追逐，也可在梦里找回一件旧物"
+    },
+    {
+      "id": "B092",
+      "category": "梦境时间与另类法则",
+      "title": "星际穿越",
+      "medium": "电影",
+      "world_logic": "星际探索、黑洞与相对论让时间成为亲密关系的距离",
+      "inspiration_handles": [
+        "环形空间站",
+        "麦田",
+        "冰云星球",
+        "巨浪"
+      ],
+      "open_possibilities": "壮阔宇宙背后是一场短暂的归家"
+    },
+    {
+      "id": "B096",
+      "category": "梦境时间与另类法则",
+      "title": "小王子",
+      "medium": "小说",
+      "world_logic": "不同星球上的寓言人物讲述孤独、责任与友谊",
+      "inspiration_handles": [
+        "微型星球",
+        "玫瑰",
+        "狐狸",
+        "星空荒漠"
+      ],
+      "open_possibilities": "最小的动作也能带出巨大情感"
+    },
+    {
+      "id": "B100",
+      "category": "梦境时间与另类法则",
+      "title": "原创：记忆树庭",
+      "medium": "原创世界",
+      "world_logic": "人们可以把一段记忆种成树，果实会重现当时的声音与天气",
+      "inspiration_handles": [
+        "会唱歌的果实",
+        "失忆花园",
+        "时光园丁",
+        "夜光种子"
+      ],
+      "open_possibilities": "寻找过去、与自己和解，或送别人一个温暖的下午"
+    },
+    {
+      "id": "B101",
+      "category": "魔法童话与奇异日常",
+      "title": "天空之城",
+      "medium": "电影／动画",
+      "world_logic": "浮空岛屿、失落的机械文明与天空交通构成垂直世界；古老技术与自然共生。",
+      "inspiration_handles": [
+        "漂浮遗迹",
+        "机器人园丁",
+        "飞行船甲板",
+        "云上植物园"
+      ],
+      "open_possibilities": "可以是冒险中发现机械花园，也可以是守护岛上最后一棵树。",
+      "origin_candidate_id": "C01",
+      "overlap_notes": "不同于云上镖局的江湖物流：重点是失落科技与天空遗迹。"
+    },
+    {
+      "id": "B102",
+      "category": "历史航海与平行时代",
+      "title": "海贼王",
+      "medium": "漫画／动画",
+      "world_logic": "奇异海域与各具规则的岛屿连接自由航海、海盗联盟和夸张能力。",
+      "inspiration_handles": [
+        "怪异气候岛",
+        "海盗航海图",
+        "恶魔果实能力",
+        "移动海上市集"
+      ],
+      "open_possibilities": "可拍海上奇遇、岛屿生态、伙伴小冲突或一件看似无用的宝藏。",
+      "origin_candidate_id": "C05",
+      "overlap_notes": "与B072加勒比海盗区别：更强调异想岛屿与漫画式能力法则。"
+    },
+    {
+      "id": "B103",
+      "category": "史诗奇幻与权谋",
+      "title": "艾尔登法环",
+      "medium": "游戏",
+      "world_logic": "破碎的王权与黄金律法笼罩广阔遗迹，古老半神、骑士和神秘力量共存。",
+      "inspiration_handles": [
+        "黄金树影",
+        "破败王都",
+        "古老赐福",
+        "风暴城堡"
+      ],
+      "open_possibilities": "可展开史诗对决，也可拍一名流浪者把微弱的灯火带进荒凉遗迹。",
+      "origin_candidate_id": "C06",
+      "overlap_notes": "避免与猎魔人等泛奇幻合并；世界特色是法则破碎与遗迹规模。"
+    },
+    {
+      "id": "B104",
+      "category": "历史宫廷与城市生活",
+      "title": "药屋少女的呢喃",
+      "medium": "小说／漫画／动画",
+      "world_logic": "古代东方宫廷的药学知识、内廷生活与细密推理交织。",
+      "inspiration_handles": [
+        "药材药柜",
+        "后宫庭园",
+        "宫廷食盒",
+        "药瓶与香气"
+      ],
+      "open_possibilities": "可拍验毒、辨药、误会与救治，也可是一位药师发现被忽视的小症状。",
+      "origin_candidate_id": "C08",
+      "overlap_notes": "区别一般宫斗：药学和观察推理是核心驱动力。"
+    },
+    {
+      "id": "B105",
+      "category": "历史宫廷与城市生活",
+      "title": "甄嬛传",
+      "medium": "电视剧",
+      "world_logic": "清代宫廷风格的礼制、权力关系与人情算计形成高度讲究仪式的空间。",
+      "inspiration_handles": [
+        "宫廷赏花",
+        "宫灯与节令",
+        "宫装发饰",
+        "礼品中的线索"
+      ],
+      "open_possibilities": "可以是一段策略性对话前的沉默，或一个不起眼的物件改变命运。",
+      "origin_candidate_id": "C09",
+      "overlap_notes": "和药屋的解谜区分：这里以人物权力关系与隐秘心理为核心。"
+    },
+    {
+      "id": "B106",
+      "category": "历史宫廷与城市生活",
+      "title": "长安十二时辰",
+      "medium": "小说／电视剧",
+      "world_logic": "盛唐长安的城坊、商旅与衙署系统在一昼夜的紧迫节奏中交织。",
+      "inspiration_handles": [
+        "坊门鼓声",
+        "灯市",
+        "唐代官署",
+        "传递消息的驿卒"
+      ],
+      "open_possibilities": "可拍在时限内赶路、救援、查访，也可以是盛世街巷里某个平凡人的抉择。",
+      "origin_candidate_id": "C10",
+      "overlap_notes": "与B071刺客信条不同：强调盛唐街坊制度与城市日常密度。"
+    },
+    {
+      "id": "B107",
+      "category": "历史人文与情感叙事",
+      "title": "紫罗兰永恒花园",
+      "medium": "小说／动画",
+      "world_logic": "战争之后的通信社会以代笔书信、旅途和人与人之间难以言说的情感连接。",
+      "inspiration_handles": [
+        "旧式打字机",
+        "邮差制服",
+        "火车邮车",
+        "未寄出的信"
+      ],
+      "open_possibilities": "写信、送信、和解与告别都可能是值得定格的一瞬。",
+      "origin_candidate_id": "C11",
+      "overlap_notes": "不同于云上镖局：重点是信件承载的情感而非运输奇技。"
+    },
+    {
+      "id": "B108",
+      "category": "海洋探索与失落文明",
+      "title": "海底两万里",
+      "medium": "小说",
+      "world_logic": "十九世纪想象中的深海科考与密闭潜艇生活，未知海洋同时神奇且危险。",
+      "inspiration_handles": [
+        "鹦鹉螺号式潜艇",
+        "铜制潜水仪",
+        "深海观察窗",
+        "水下遗迹"
+      ],
+      "open_possibilities": "可拍航海科学发现、潜艇日常或外海一只稀奇海兽的短暂到访。",
+      "origin_candidate_id": "C13",
+      "overlap_notes": "与亚特兰蒂斯不同：主角是海洋探索和复古工程技术。"
+    },
+    {
+      "id": "B109",
+      "category": "海洋探索与失落文明",
+      "title": "亚特兰蒂斯：失落的帝国",
+      "medium": "电影／动画",
+      "world_logic": "神秘失落城市把古老机械、晶体能源、独特文字与水下文明连接。",
+      "inspiration_handles": [
+        "晶体能源",
+        "古代机关",
+        "水下穹顶",
+        "石刻语言"
+      ],
+      "open_possibilities": "可以是破解失传机关、救护遗迹、和当地文明互相理解。",
+      "origin_candidate_id": "C14",
+      "overlap_notes": "与B010珊瑚潮汐王国区分：偏遗失文明与科考，不是日常海底王国。"
+    },
+    {
+      "id": "B110",
+      "category": "星际航行与宇宙文明",
+      "title": "三体",
+      "medium": "小说／影视",
+      "world_logic": "极端天文环境、科学困境和文明级选择塑造冷峻的宇宙叙事。",
+      "inspiration_handles": [
+        "多重太阳",
+        "宇宙信号",
+        "天文观测阵列",
+        "文明档案"
+      ],
+      "open_possibilities": "可从观测员发现异常切入，也可记录宏大危机中微小的人性选择。",
+      "origin_candidate_id": "C15",
+      "overlap_notes": "与星球大战区分：硬科幻设想与宇宙文明困境优先。"
+    },
+    {
+      "id": "B111",
+      "category": "赛博科技与机械生命",
+      "title": "环太平洋",
+      "medium": "电影",
+      "world_logic": "沿海巨兽威胁促成巨型机甲与驾驶员协作体系；巨大尺度与人类情绪形成反差。",
+      "inspiration_handles": [
+        "机甲维护舱",
+        "双人驾驶舱",
+        "暴雨海港",
+        "巨兽警报"
+      ],
+      "open_possibilities": "可拍紧急维修、出击前的默契或驾驶员和机甲之间不起眼的告别。",
+      "origin_candidate_id": "C21",
+      "overlap_notes": "与B057机械野兽区分：工业级巨型机甲与人类团队协作。"
+    },
+    {
+      "id": "B112",
+      "category": "梦境时间与另类法则",
+      "title": "原创：影子裁缝街",
+      "medium": "原创世界",
+      "world_logic": "影子具有可缝补的实体形态，能代替主人暴露心事，甚至自己出走。",
+      "inspiration_handles": [
+        "影子缝纫铺",
+        "错位影子",
+        "黄昏路灯",
+        "会逃跑的影剪"
+      ],
+      "open_possibilities": "可拍裁缝替客人缝合破碎影子，或一条影子把主人一直不敢送出的礼物送走。",
+      "origin_candidate_id": "C24",
+      "overlap_notes": "独立原创法则：影子的行动与其主人的心愿不完全一致。"
+    },
+    {
+      "id": "B113",
+      "category": "星际航行与宇宙文明",
+      "title": "原创：失重果园",
+      "medium": "原创世界",
+      "world_logic": "在小行星带微弱引力下种植的果树，果实随轨道漂移，园丁在微重力中采收。",
+      "inspiration_handles": [
+        "微重力果树",
+        "漂浮果实",
+        "航天园艺工具",
+        "微型采收船"
+      ],
+      "open_possibilities": "可拍追回离轨的果子，或在寂静太空中接住第一颗成熟的果实。",
+      "origin_candidate_id": "C29",
+      "overlap_notes": "不是普通太空温室：果实轨道与微重力生态决定动作。"
+    },
+    {
+      "id": "B114",
+      "category": "梦境时间与另类法则",
+      "title": "原创：梦境车票亭",
+      "medium": "原创世界",
+      "world_logic": "午夜小站贩售通往个人记忆的车票，只能重访，不能改变过去。",
+      "inspiration_handles": [
+        "泛黄车票",
+        "没有时刻表的站台",
+        "梦境检票钳",
+        "回忆中的旧车窗"
+      ],
+      "open_possibilities": "可以是售票员帮人找到想见的过去，也可以是旅客最终选择不登车。",
+      "origin_candidate_id": "C30",
+      "overlap_notes": "区别B091盗梦空间：是温柔的记忆旅行制度，而非梦境潜入任务。"
+    },
+    {
+      "id": "B115",
+      "category": "人间百业·职业与生活",
+      "title": "赌博与赌场世界",
+      "medium": "职业题材／文化场景",
+      "world_logic": "赌场与民间牌局构成概率、礼仪、表演和心理博弈的特殊社交环境。",
+      "inspiration_handles": [
+        "轮盘桌",
+        "扑克牌局",
+        "赌场发牌员",
+        "麻将与旧式赌坊"
+      ],
+      "open_possibilities": "可拍一位发牌员看见异常线索、老赌坊中的一场告别或高压赛事后的释然。",
+      "origin_candidate_id": "C31",
+      "overlap_notes": "作为故事文化与人物心理题材，不提供现实下注策略、赌局服务或获利保证。"
+    },
+    {
+      "id": "B116",
+      "category": "舞台艺术与表演文化",
+      "title": "日本歌姬",
+      "medium": "音乐文化／职业题材",
+      "world_logic": "日本流行音乐、昭和歌谣和现代舞台演出并存，歌手的台前台后有不同生活。",
+      "inspiration_handles": [
+        "演歌舞台",
+        "唱片店",
+        "后台化妆镜",
+        "现场乐队"
+      ],
+      "open_possibilities": "可拍返场前的一秒、舞台事故后的临场救场、深夜唱片店里的旧歌重逢。",
+      "origin_candidate_id": "C32",
+      "overlap_notes": "与京剧区别：流行音乐、歌谣文化与现代演出体系。"
+    },
+    {
+      "id": "B117",
+      "category": "舞台艺术与表演文化",
+      "title": "中国京剧",
+      "medium": "传统戏曲／职业题材",
+      "world_logic": "戏曲行当、程式表演、脸谱、锣鼓经和戏班传承构成完整的舞台文化。",
+      "inspiration_handles": [
+        "花旦与武旦",
+        "水袖",
+        "戏台锣鼓",
+        "后台勾脸"
+      ],
+      "open_possibilities": "可拍一位武旦为戏台上的失误临时救场，或年轻演员第一次穿上师父传下的戏服。",
+      "origin_candidate_id": "C33",
+      "overlap_notes": "不把花旦、武旦、老生等混成一种服装；角色装扮应服从行当。"
+    },
+    {
+      "id": "B118",
+      "category": "舞台艺术与表演文化",
+      "title": "西班牙斗牛士",
+      "medium": "历史文化／竞技题材",
+      "world_logic": "伊比利亚传统斗牛场的仪式性服饰、节奏、观众与竞赛传统形成强烈视觉语言。",
+      "inspiration_handles": [
+        "绣金短夹克",
+        "红色斗篷",
+        "圆形竞技场",
+        "黄沙与观众席"
+      ],
+      "open_possibilities": "可拍入场前的犹豫、退场时的沉思，亦可从摄影或服装传承角度叙述。",
+      "origin_candidate_id": "C34",
+      "overlap_notes": "区别一般骑士与武术：突出特定地区服饰、斗篷和舞台仪式。"
+    },
+    {
+      "id": "B119",
+      "category": "人间百业·职业与生活",
+      "title": "医生与医疗世界",
+      "medium": "现实职业题材",
+      "world_logic": "城市医院、乡村诊所、紧急医疗和医疗研究都有真实分工与专业场景。",
+      "inspiration_handles": [
+        "无影灯",
+        "急诊走廊",
+        "乡村出诊包",
+        "病历与听诊器"
+      ],
+      "open_possibilities": "可拍医生在深夜救治后的片刻松弛、复杂会诊或一次小小的关怀。",
+      "origin_candidate_id": "C35",
+      "overlap_notes": "服装围绕医生的实际任务：白大褂、手术衣和急诊装备并不混用。"
+    },
+    {
+      "id": "B120",
+      "category": "人间百业·职业与生活",
+      "title": "教师与校园生活",
+      "medium": "现实职业题材",
+      "world_logic": "学校课堂、体育场、实验室和教师办公室形成传授知识与成长的社会空间。",
+      "inspiration_handles": [
+        "黑板与粉笔",
+        "课堂实验",
+        "毕业合影",
+        "乡村校舍"
+      ],
+      "open_possibilities": "可拍成年教师完成一次难忘课堂、毕业季归还旧作业或实验成功时的喜悦。",
+      "origin_candidate_id": "C36",
+      "overlap_notes": "区别哈利·波特：现实教育关系和学科活动，而非魔法校园。"
+    },
+    {
+      "id": "B121",
+      "category": "人间百业·职业与生活",
+      "title": "警察与刑侦世界",
+      "medium": "现实职业题材",
+      "world_logic": "街头巡逻、刑事侦查、法证与警务协作拥有不同工作逻辑。",
+      "inspiration_handles": [
+        "雨夜巡逻",
+        "勘查灯",
+        "警局档案",
+        "交通指挥"
+      ],
+      "open_possibilities": "可拍刑警找到最后一条线索、夜班交接或一次救援后的平静。",
+      "origin_candidate_id": "C37",
+      "overlap_notes": "应区分巡警、刑警、法证工作与服装，不让每人都成为全能特工。"
+    },
+    {
+      "id": "B122",
+      "category": "人间百业·职业与生活",
+      "title": "股票与金融交易",
+      "medium": "现实职业题材",
+      "world_logic": "证券交易员、研究员、交易所与家庭投资者生活在不同的信息和决策场景。",
+      "inspiration_handles": [
+        "交易大厅",
+        "价格大屏",
+        "研究员桌面",
+        "旧时喊价交易池"
+      ],
+      "open_possibilities": "可拍交易员等待开盘前的沉默、分析师推翻预测，或停电后用纸记录行情。",
+      "origin_candidate_id": "C38",
+      "overlap_notes": "侧重人物选择和市场文化，不暗示具体投资获利或市场预测。"
+    },
+    {
+      "id": "B123",
+      "category": "人间百业·职业与生活",
+      "title": "面包师与烘焙世界",
+      "medium": "现实职业题材",
+      "world_logic": "清晨面包坊、古老窑炉与精细甜点工坊以面团、发酵和手工工序维系生活。",
+      "inspiration_handles": [
+        "凌晨发酵面团",
+        "木质烤炉",
+        "橱窗甜点",
+        "街角烘焙坊"
+      ],
+      "open_possibilities": "可拍烤出第一炉面包、为离别的客人留下一块点心，或面粉飞扬的一次意外。",
+      "origin_candidate_id": "C39",
+      "overlap_notes": "已有城市故事里曾出现面包店，但本卡聚焦烘焙职业与工艺。"
+    }
+  ],
+  "candidate_id_map": {
+    "C01": "B101",
+    "C05": "B102",
+    "C06": "B103",
+    "C08": "B104",
+    "C09": "B105",
+    "C10": "B106",
+    "C11": "B107",
+    "C13": "B108",
+    "C14": "B109",
+    "C15": "B110",
+    "C21": "B111",
+    "C24": "B112",
+    "C29": "B113",
+    "C30": "B114",
+    "C31": "B115",
+    "C32": "B116",
+    "C33": "B117",
+    "C34": "B118",
+    "C35": "B119",
+    "C36": "B120",
+    "C37": "B121",
+    "C38": "B122",
+    "C39": "B123"
+  }
+}

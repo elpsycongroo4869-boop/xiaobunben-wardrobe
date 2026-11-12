@@ -1,0 +1,16 @@
+{
+  "id": "B104",
+  "category": "历史宫廷与城市生活",
+  "title": "药屋少女的呢喃",
+  "medium": "小说／漫画／动画",
+  "world_logic": "古代东方宫廷的药学知识、内廷生活与细密推理交织。",
+  "inspiration_handles": [
+    "药材药柜",
+    "后宫庭园",
+    "宫廷食盒",
+    "药瓶与香气"
+  ],
+  "open_possibilities": "可拍验毒、辨药、误会与救治，也可是一位药师发现被忽视的小症状。",
+  "origin_candidate_id": "C08",
+  "overlap_notes": "区别一般宫斗：药学和观察推理是核心驱动力。"
+}

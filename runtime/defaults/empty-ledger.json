@@ -1,0 +1,37 @@
+{
+  "schema": "wardrobe2-shelf-state-v0.2",
+  "auto_seq": 0,
+  "book_stats": {},
+  "original": {
+    "auto_use_count": 0,
+    "next_eligible_auto_seq": 1,
+    "fixed_cd": 10
+  },
+  "renders": {},
+  "work_books": {},
+  "work_origins": {},
+  "active_notes": [],
+  "p13": {
+    "schema": "wardrobe2-p13-integrated-v1",
+    "local_cd": {
+      "schema": "wardrobe2-local-cd-sidecar-prototype-v1",
+      "shelf_visits": {
+        "S01": 0,
+        "S02": 0,
+        "S03": 0,
+        "S04": 0
+      },
+      "book_stats": {},
+      "work_books": {},
+      "render_ids": {}
+    },
+    "self": {
+      "timezone": "Asia/Shanghai",
+      "day_key": "2000-01-02",
+      "uses_today": 0,
+      "remaining_other_successes": 0,
+      "self_work_ids": {},
+      "other_render_ids": []
+    }
+  }
+}

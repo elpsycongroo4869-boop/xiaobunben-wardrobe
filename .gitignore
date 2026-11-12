@@ -1,27 +1,8 @@
-# Private roles, reference images and local runtime
-/private/
-/assets/*
-!/assets/open-card.html
-/references/history.jsonl
-/references/*完整用户提示词*.txt
-/local/
-/.pending/
-/pending/
-/output/
-/outputs/
-/wardrobe-runtime/
-/runtime/
-**/*pending*/
-*.zip
-*.log
-
-# Environment, editor and Python files
-.env
-.env.*
-!.env.example
 __pycache__/
-*.py[cod]
-.pytest_cache/
-.venv/
-.DS_Store
-Thumbs.db
+*.pyc
+.wardrobe2/
+shelf-state.json
+pending/
+native-open/
+native-success/
+owner-profile.json

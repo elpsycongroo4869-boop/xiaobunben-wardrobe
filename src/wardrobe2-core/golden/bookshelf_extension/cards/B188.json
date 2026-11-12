@@ -1,0 +1,13 @@
+{
+  "id": "B188",
+  "category": "游戏",
+  "title": "最终幻想VII",
+  "medium": "作品灵感",
+  "world_logic": "城市能源与星球生命相连，基础设施的选择有阶层代价。",
+  "inspiration_handles": [
+    "高架列车",
+    "反应炉",
+    "贫民区花盆"
+  ],
+  "open_possibilities": "可以拍工程师断开耗能设备救下街区，或花农让出了稀缺的上行车票。"
+}

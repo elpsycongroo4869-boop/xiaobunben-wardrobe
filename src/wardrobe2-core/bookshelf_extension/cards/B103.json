@@ -1,0 +1,16 @@
+{
+  "id": "B103",
+  "category": "史诗奇幻与权谋",
+  "title": "艾尔登法环",
+  "medium": "游戏",
+  "world_logic": "破碎的王权与黄金律法笼罩广阔遗迹，古老半神、骑士和神秘力量共存。",
+  "inspiration_handles": [
+    "黄金树影",
+    "破败王都",
+    "古老赐福",
+    "风暴城堡"
+  ],
+  "open_possibilities": "可展开史诗对决，也可拍一名流浪者把微弱的灯火带进荒凉遗迹。",
+  "origin_candidate_id": "C06",
+  "overlap_notes": "避免与猎魔人等泛奇幻合并；世界特色是法则破碎与遗迹规模。"
+}
