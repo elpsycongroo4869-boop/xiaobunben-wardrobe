@@ -91,7 +91,7 @@
 
 感谢 fal.ai 社区公开 Cinematography Skill。衣橱从中借鉴了机位、景别、焦段、灯光和色彩的摄影知识，供摄影与灯光岗位创作时参考。随包保留上游署名与 MIT 许可证，成片由 ChatGPT 原生图片工具生成。 [上游 Cinematography Skill](https://github.com/fal-ai-community/skills/tree/main/skills/cinematography) · [随包许可证](src/wardrobe2-core/third_party/cinematography/LICENSE)
 
-也谢谢一路陪我们试拍、指出动作和表情哪里不自然、帮忙挑出值得留下的成片的朋友。你们的反馈让故事里的那一刻更容易被看见。
+
 
 ## 源码与许可
 
