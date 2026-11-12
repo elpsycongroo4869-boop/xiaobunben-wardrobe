@@ -7,7 +7,7 @@ from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
 REPO = Path(__file__).resolve().parents[1]
 CORE = REPO / "src/wardrobe2-core"
 RUNTIME = REPO / "runtime"
-VERSION = "5.0.0"
+VERSION = "5.0.1"
 
 
 def files(directory):

@@ -20,7 +20,7 @@ from p14_character import (card_from_file, director_from_card, render_contract_f
                            validate_director_job, signed_render_request, verify_dispatch)
 
 BASE = Path(__file__).resolve().parent
-VERSION = '5.0.0'
+VERSION = '5.0.1'
 SESSION_MARKER = '.p14-session.json'
 SESSION_SCHEMA = 'wardrobe2-p14-action-narrative-session-v1'
 VISUAL_INTENT_PROFILE = 'visual_intent_v1'

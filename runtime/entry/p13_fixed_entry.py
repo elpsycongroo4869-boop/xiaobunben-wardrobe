@@ -161,7 +161,7 @@ def read_ledger(p: Path, schema: str) -> tuple[dict, bytes]:
     raw = p.read_bytes()
     data = json.loads(raw)
     if data.get('p13',{}).get('schema')!=schema:
-        raise ValueError('not a migrated P1.3 ledger; never auto-migrate at 4869')
+        raise ValueError('not a migrated P1.3 ledger; automatic migration is disabled at startup')
     if not isinstance(data.get('auto_seq'),int): raise ValueError('invalid auto_seq')
     if not isinstance(data.get('renders'),dict): raise ValueError('invalid render receipts')
     return {'auto_seq':data['auto_seq'],'recorded_images':len(data['renders']),
