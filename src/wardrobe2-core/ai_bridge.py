@@ -42,7 +42,7 @@ def selection_prompt(studio: Studio, persona_summary: str, now) -> str:
 
 def production_prompt(selection: dict, persona: dict, work_id: str, *,
                       world_card_dir: Path | None = None,
-                      compact_character_draft=False, emotion_only=False,
+                      compact_character_draft=False, emotion_only=False, emotional_context=False,
                       selected_book=None, chapter=None) -> str:
     """One selected book's complete details (if any) + professional responsibilities."""
     origin = selection['origin']; book_id = selection.get('book_id')
@@ -81,13 +81,16 @@ def production_prompt(selection: dict, persona: dict, work_id: str, *,
                 '若本轮采用三格，保留衣类与文化辨识度，通过叠穿、搭配和合身程度变化。'
             )
     routed = route_preferences(persona)
-    if emotion_only:
+    if emotion_only or emotional_context:
         routed.pop('performance')
     directed = ['- '+role+': '+'；'.join(notes) for role,notes in routed.items() if notes]
     if routed['performance.expression']:
-        directed.append('performance.expression 的偏好用于内心反应，优先回应事件并继承制作人指定的关键表情。')
+        directed.append('情绪偏好用于角色的内心与整体表演，优先回应事件并继承制作人锁定的行为。')
     public_persona = {k:v for k,v in persona.items() if k != 'preferences'}
-    if emotion_only:
+    if emotional_context:
+        from emotion_director import AUTHORING_GUIDANCE
+        responsibilities = AUTHORING_GUIDANCE
+    elif emotion_only:
         responsibilities = [
             '必要的故事行为只由章节 Point 或自由创作的制作人 Point 决定。具体站姿、步态与四肢配合交给演员自然演绎。',
             'scene 设计空间、材质、道具及可见证据；wardrobe 设计完整造型与入镜服装。两岗均不安排人物动作。',
@@ -104,7 +107,7 @@ def production_prompt(selection: dict, persona: dict, work_id: str, *,
             'scene 决定世界空间/材质/道具；wardrobe 决定完整造型与镜头可见造型（不要求全拍到）；'
             'performance 承接必要行为与人物内心；lighting 依据场景、材质和表演做真实布光；camera 自由决定取景。',
         ]
-    performance_fields = 'expression' if emotion_only else 'action,expression'
+    performance_fields = 'emotional_context' if emotional_context else ('expression' if emotion_only else 'action,expression')
     return '\n'.join([
         '# 小笨笨衣橱二号 · 一个故事的完整深化',
         f'work_id: {work_id}',
@@ -129,6 +132,7 @@ def production_prompt(selection: dict, persona: dict, work_id: str, *,
         ('预设第 1–4 章：producer 只需 {\"visual_decisions\":\"本轮确实新增且会影响画面的决定\"}，'
          '没有新增决定可用 {}。勿重述五栏，也不要重写既定 Point；程序从本次封存章节自动补入完整 producer，'
          '并将 Point 原文作为 producer.moment。摄影视角、造型、光线与演员仍要充分创作。'
+         + (' 如需锁定精确局部表演，可同时填写 performance_lock。' if emotional_context else '')
          if chapter and chapter['id'] != 0 else 'producer 字段: intent/context/event/moment/emotion。'),
         'roles 字段: scene{plan,props}, wardrobe{full_outfit,visible_outfit}, '
         f'performance{{{performance_fields}}}, lighting{{plan}}, camera{{plan,visible_frame}}。'
