@@ -1,10 +1,10 @@
 {
   "schema": "wardrobe2-public-release-v1",
-  "version": "5.0.2",
-  "launch_name": "xiaobunben-wardrobe-2-v5.0.2.zip",
+  "version": "5.0.3",
+  "launch_name": "xiaobunben-wardrobe-2-v5.0.3.zip",
   "runtime_entry": "runtime/entry/p14.py",
   "core_archive": "runtime/entry/packages/wardrobe2-core.zip",
-  "core_sha256": "aaf9912cbaf36c8113b1cd6a4039a9f710049e046c0428bad8dae248dc70bb81",
+  "core_sha256": "5308eeb97617200698717ffe68a358b69530054800d75ccda05cf4c163d25cd8",
   "curated_world_count": 200,
   "preset_point_count": 800,
   "candidate_count_default": 10

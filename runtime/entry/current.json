@@ -5,7 +5,7 @@
   "runtime_dir_name": "wardrobe2-core",
   "archive": {
     "path": "packages/wardrobe2-core.zip",
-    "sha256": "aaf9912cbaf36c8113b1cd6a4039a9f710049e046c0428bad8dae248dc70bb81"
+    "sha256": "5308eeb97617200698717ffe68a358b69530054800d75ccda05cf4c163d25cd8"
   },
   "runtime_schema": "wardrobe2-p13-integrated-v1",
   "readonly_default": true
