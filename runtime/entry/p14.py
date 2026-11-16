@@ -20,11 +20,11 @@ from p14_character import (card_from_file, director_from_card, render_contract_f
                            validate_director_job, signed_render_request, verify_dispatch)
 
 BASE = Path(__file__).resolve().parent
-VERSION = '5.0.2'
+VERSION = '5.0.3'
 SESSION_MARKER = '.p14-session.json'
 SESSION_SCHEMA = 'wardrobe2-p14-action-narrative-session-v1'
 VISUAL_INTENT_PROFILE = 'visual_intent_v1'
-RENDER_POLICY = 'rc9_5'
+RENDER_POLICY = 'emotion_v1'
 NATIVE_RESULT_LOCK = '.p14-native-result.lock'
 WORK_ID = re.compile(r'[A-Za-z0-9_-]{1,96}')
 BUTTON_COMMAND = re.compile(
@@ -147,7 +147,7 @@ def production_prompt(runtime, data_dir, selection, persona, work_id, *, charact
             '交稿时 role_director 只写 {"story_fit":"本轮角色适配"}，'
             'persona 只写 adult=true 和 story_role。由程序补齐稳定身份和 render_contract。'
             '本轮已确定的图像资产为 '+json.dumps(contract['image_assets'], ensure_ascii=False)+'。')
-    options = ['--emotion-only']
+    options = ['--emotion-context']
     if selected_card is not None:
         options.append('--compact-character-draft')
     result = _call(runtime, data_dir, 'production-prompt',
@@ -172,7 +172,7 @@ def production_prompt(runtime, data_dir, selection, persona, work_id, *, charact
     if chapter is not None and chapter['id'] != 0:
         guidance = (
             '\n【预设章节交稿】章节 Point 已锁定。不要重写 intent/context/event/moment/emotion 五栏。'
-            'producer 只可补充不改变 Point 的视觉想法 {"visual_decisions":"..."}，没有新增就用 {}。'
+            'producer 可交 visual_decisions 与从既定 Point 逐字摘录的 performance_lock；没有新增就用 {}。'
             '程序将 Point 原文填入 producer.moment。'
             '只有用户明确要求或既定 Point 离不开在场配角时才拍入配角，主角仍是视觉中心。'
         )
@@ -203,7 +203,7 @@ def production_prompt(runtime, data_dir, selection, persona, work_id, *, charact
     return result
 
 
-def _normalize_preset_producer(job, chapter):
+def _normalize_preset_producer(job, chapter, *, new_emotion=False):
     """Expand a compact authored delta using the session-pinned chapter only.
 
     Do this before any seal or render compilation. Free chapter/other origins and
@@ -220,7 +220,8 @@ def _normalize_preset_producer(job, chapter):
     legacy = {'intent', 'context', 'event', 'moment', 'emotion'}
     if legacy.issubset(draft) and 'visual_decisions' not in draft:
         return {**job, 'producer': {**draft, 'moment': point}}
-    if set(draft) - {'visual_decisions'}:
+    allowed = {'visual_decisions', 'performance_lock'} if new_emotion else {'visual_decisions'}
+    if set(draft) - allowed:
         raise ValueError('preset producer must use only visual_decisions or a complete legacy five-field draft')
     delta = draft.get('visual_decisions', '')
     if not isinstance(delta, str):
@@ -232,8 +233,11 @@ def _normalize_preset_producer(job, chapter):
         'context': f'已选定世界书 {chapter["book_id"]} 的第 {chapter["id"]} 章《{chapter_name}》；世界环境以本轮岗位定稿为准',
         'event': point + (f'\n本轮补充的画面决定：{delta}' if delta else ''),
         'moment': point,
-        'emotion': '以章节 Point 的既定情绪与 performance.expression 的具体演绎为准',
+        'emotion': ('沿用章节 Point 的情绪，具体演绎见情绪导演交稿。' if new_emotion
+                    else '以章节 Point 的既定情绪与 performance.expression 的具体演绎为准'),
     }
+    if 'performance_lock' in draft:
+        resolved['performance_lock'] = draft['performance_lock']
     if delta:
         resolved['visual_decisions'] = delta
     return {**job, 'producer': resolved}
@@ -342,15 +346,14 @@ def prepare(runtime, data_dir, job_file, *, studio=None, create_if_absent=None, 
         normalized = {**normalized, 'chapter': chapter}
     elif 'chapter_id' in job or 'chapter' in job:
         raise ValueError('unbound chapter in job')
-    if sealed_job is None and chapter is not None and chapter['id'] != 0:
-        normalized = _normalize_preset_producer(normalized, chapter)
     if cd_count is not None:
         normalized = {**normalized, 'fixed_world_candidate_count': cd_count}
-    creation_settings = normalized.get('creation_profile')
-    triptych = isinstance(creation_settings, dict) and creation_settings.get('outfit_triptych') is True
-    policy = sealed_job.get('render_policy') if sealed_job is not None else (
-        RENDER_POLICY if job.get('render_profile') == VISUAL_INTENT_PROFILE or triptych else None
-    )
+    policy = sealed_job.get('render_policy') if sealed_job is not None else RENDER_POLICY
+    if chapter is not None and chapter['id'] != 0:
+        normalized = _normalize_preset_producer(
+            normalized, chapter, new_emotion=policy == RENDER_POLICY)
+    if policy == RENDER_POLICY and job.get('render_profile') != VISUAL_INTENT_PROFILE:
+        raise ValueError('new jobs require render_profile visual_intent_v1; refresh production-prompt')
     if 'render_policy' in job and job['render_policy'] != policy:
         raise ValueError('render policy differs from the original seal or this runtime')
     if policy is not None:

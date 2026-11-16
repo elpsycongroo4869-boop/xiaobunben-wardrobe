@@ -38,6 +38,8 @@ python -B -X utf8 runtime/entry/p14.py --host-compact prepare --runtime <runtime
 
 选定一个菜单中的书与章节，执行 `production-prompt`，按返回的岗位指导完成一份 Job。第 1 至 4 章使用程序返回的 Point。第 0 章由制作人自由创作。岗位完整交稿后只调用一次准备封签流程。
 
+5.0.3 起，情绪导演填写 `roles.performance.emotional_context`，可以指导大哭、大笑等整体表演。只有制作人能通过 `producer.performance_lock` 增加剧情明确要求的固定局部表演，预设章节需逐字摘自 Point。其他岗位沿用既定事件，摄影只决定怎么拍清楚。若 `prepare` 指出越权，按报错改写对应岗位的交稿后再提交。已有封签用原会话开箱。
+
 若宿主无法持久保留同一本地会话，选择可跨消息恢复的存储。省略 `--session-store`，保存 `prepare` 返回的 JSON，把其 `pending_path` 指向的封签持久保存并读回。用原 `runtime` 与 `data_dir` 执行 `verify-delivery <prepare返回JSON> --original <原封签> --readback <读回文件>`。
 
 ### 打开衣橱

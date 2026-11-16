@@ -24,6 +24,7 @@ def main(argv=None):
     prod=sub.add_parser('production-prompt');prod.add_argument('selection_json',type=Path);prod.add_argument('persona_json',type=Path);prod.add_argument('work_id')
     prod.add_argument('--compact-character-draft', action='store_true')
     prod.add_argument('--emotion-only', action='store_true')
+    prod.add_argument('--emotion-context', action='store_true')
     prep=sub.add_parser('prepare');prep.add_argument('job_file',type=Path)
     cp=sub.add_parser('chat-preview');cp.add_argument('work_id');cp.add_argument('--seal-sha256',required=True)
     op=sub.add_parser('open');op.add_argument('work_id');op.add_argument('--seal-sha256')
@@ -61,7 +62,8 @@ def main(argv=None):
             out=production_prompt(selection,read_json(a.persona_json),a.work_id,
                                   world_card_dir=shelf_root/'cards',
                                   compact_character_draft=a.compact_character_draft,
-                                  emotion_only=a.emotion_only, selected_book=book, chapter=chapter)
+                                  emotion_only=a.emotion_only, emotional_context=a.emotion_context,
+                                  selected_book=book, chapter=chapter)
             if selection['origin']=='autonomous_self':
                 self_id=selection.get('self_book_id')
                 if self_id not in ('SELF_FREE','SELF_ECHO'):raise ValueError('invalid SELF book')
@@ -100,7 +102,7 @@ def main(argv=None):
         elif a.command=='fail-attempt':result=studio.fail_attempt(a.work_id,a.attempt_id)
         elif a.command=='confirm':
             result=studio.confirm_image(a.work_id,a.render_id,a.image_file,attempt_id=a.attempt_id)
-        elif a.command=='contract':result=role_contract(emotion_only=True)
+        elif a.command=='contract':result=role_contract(emotional_context=True)
         else:result=studio.shelf.state
     print(json.dumps(result,ensure_ascii=False,indent=2))
 

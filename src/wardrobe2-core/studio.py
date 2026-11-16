@@ -17,6 +17,7 @@ from pathlib import Path
 from typing import Any
 
 from wardrobe2_core import Shelf
+from emotion_director import RENDER_POLICY_EMOTION_V1, render_performance
 
 PROTOCOL = 'wardrobe2-studio-p1'
 VISUAL_INTENT_PROFILE = 'visual_intent_v1'
@@ -28,7 +29,8 @@ RENDER_POLICY_RC7 = 'rc7_v1'
 RENDER_POLICY_RC8_R1 = 'rc8_r1'
 RENDER_POLICY_RC9_2 = 'rc9_2'
 RENDER_POLICY_RC9_5 = 'rc9_5'
-BOUNDED_RENDER_POLICIES = (RENDER_POLICY_RC7, RENDER_POLICY_RC8_R1, RENDER_POLICY_RC9_2, RENDER_POLICY_RC9_5)
+RENDER_POLICY_EMOTION_V1 = 'emotion_v1'
+BOUNDED_RENDER_POLICIES = (RENDER_POLICY_RC7, RENDER_POLICY_RC8_R1, RENDER_POLICY_RC9_2, RENDER_POLICY_RC9_5, RENDER_POLICY_EMOTION_V1)
 MAX_RENDER_BYTES = 6144
 RECENT_STORY_MOMENTS = 'recent_story_moments'
 SINGLE_OUTPUT_EN = re.compile(
@@ -99,6 +101,10 @@ def required_text(d: dict[str, Any], field: str, scope: str) -> str:
 
 
 def role_fields(job: dict[str, Any], role: str) -> tuple[str, ...]:
+    if role == 'performance' and job.get('render_policy') == RENDER_POLICY_EMOTION_V1:
+        if set(job['roles'][role]) != {'emotional_context'}:
+            raise ValueError('performance must contain only emotional_context')
+        return ('emotional_context',)
     if role == 'performance' and job.get('render_policy') == RENDER_POLICY_RC9_5:
         if set(job['roles'][role]) != {'expression'}:
             raise ValueError('RC9.5 performance must contain only expression')
@@ -225,17 +231,19 @@ def compose_render(job: dict[str, Any]) -> str:
         if job.get('render_profile', VISUAL_INTENT_PROFILE) != VISUAL_INTENT_PROFILE:
             raise ValueError('unsupported job render_profile')
         frame = required_text(job['roles']['camera'], 'visible_frame', 'camera')
-        if policy == RENDER_POLICY_RC9_5:
+        if policy in (RENDER_POLICY_RC9_5, RENDER_POLICY_EMOTION_V1):
             performance = job['roles'].get('performance')
             if not isinstance(performance, dict):
                 raise ValueError('performance must be object')
             for field in role_fields(job, 'performance'):
                 required_text(performance, field, 'performance')
             frame = _without_exact_identity_lines(frame, persona, parts[1])
+        if policy == RENDER_POLICY_EMOTION_V1:
+            parts.extend(render_performance(job))
         if triptych:
-            if policy in (RENDER_POLICY_RC8_R1, RENDER_POLICY_RC9_2, RENDER_POLICY_RC9_5):
+            if policy in (RENDER_POLICY_RC8_R1, RENDER_POLICY_RC9_2, RENDER_POLICY_RC9_5, RENDER_POLICY_EMOTION_V1):
                 frame = triptych_frame(frame)
-            if policy in (RENDER_POLICY_RC9_2, RENDER_POLICY_RC9_5):
+            if policy in (RENDER_POLICY_RC9_2, RENDER_POLICY_RC9_5, RENDER_POLICY_EMOTION_V1):
                 parts[0] = 'Create a new high-quality photorealistic cinematic image. Do not edit an existing image.'
             else:
                 parts[0] = ('Create ONE new high-quality photorealistic cinematic image with three equal panels side by side. '
@@ -260,6 +268,8 @@ def compose_render(job: dict[str, Any]) -> str:
                                  '本轮尚未封签，暂停开箱。')
         return rendered
 
+    if policy == RENDER_POLICY_EMOTION_V1:
+        raise ValueError('emotion_v1 requires visual_intent_v1')
     producer, roles = job['producer'], job['roles']
     parts += [
         'World and narrative: ' + producer['context'].strip() + '. ' + producer['event'].strip() + '.',
@@ -563,13 +573,16 @@ class Studio:
             return result
 
 
-def role_contract(*, emotion_only: bool = False) -> dict[str, Any]:
+def role_contract(*, emotion_only: bool = False, emotional_context: bool = False) -> dict[str, Any]:
     performance = ({'fields': ['expression'], 'owns': 'inner state, emotional layers, facial expression'}
                    if emotion_only else
                    {'fields': list(MANDATORY['performance']), 'owns': 'action, expression, gaze'})
+    if emotional_context:
+        performance = {'fields': ['emotional_context'], 'owns': 'story experience and whole emotional performance'}
     return {
         'producer': {'fields': list(PRODUCER_FIELDS), 'owner': 'current AI creative producer',
-                     'rule': 'One story, one moment; no preselected camera/costume.'},
+                     'rule': ('One moment; only producer may lock exact story performance with performance_lock.'
+                              if emotional_context else 'One story, one moment; no preselected camera/costume.')},
         'scene': {'fields': list(MANDATORY['scene']), 'owns': 'environment, prop materials, physical layout'},
         'wardrobe': {'fields': list(MANDATORY['wardrobe']), 'owns': 'complete costume vs camera-visible details'},
         'performance': performance,
